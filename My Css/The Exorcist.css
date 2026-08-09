@@ -1624,10 +1624,15 @@ body{
 }
 
 .book-title{
-    font-size: clamp(3rem, 13vw, 4.8rem);
-    line-height: .95;
-    margin: .8rem 0 1rem;
+    font-size: 3rem;
     letter-spacing: 5px;
+     color: var(--border-color);
+    line-height: 1;
+    margin: .8rem 0 1rem;
+}
+
+body.dark-mode .book-title{
+    color: var(--text-color);
 }
 
 .book-genres{
@@ -1643,7 +1648,7 @@ body{
 }
 
 .book-cover{
-    bottom: -190px;
+    bottom: -210px;
 }
 
 .book-cover img{
@@ -1652,7 +1657,7 @@ body{
 }
 
 .summary-section{
-    padding-top: 13rem;
+    padding-top: 15rem;
 }
 
 .summary-grid{

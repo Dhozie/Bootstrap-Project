@@ -1623,9 +1623,14 @@ body{
 
 .book-title{
     font-size: 4rem;
-    line-height: .95;
+    letter-spacing: 4px;
+     color: var(--border-color);
+    line-height: 1;
     margin: .8rem 0 1rem;
-    letter-spacing: 9px;
+}
+
+body.dark-mode .book-title{
+    color: var(--text-color);
 }
 
 .book-genres{
