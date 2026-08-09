@@ -85,6 +85,8 @@ body {
     transition: width .2s ease-in-out;
 }
 
+/* Find the Book Button  */
+
 #find-book {
     position: fixed;
     bottom: 30px;
@@ -471,7 +473,7 @@ body.dark-mode .theme-toggle .label::before {
     padding: 140px 20px 0;
     text-align: center;
     overflow: visible;
-    background-image: url("../My Images/Curselight.png");
+    background-image: url("../My Images/elight.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -479,7 +481,7 @@ body.dark-mode .theme-toggle .label::before {
 }
 
 body.dark-mode .book-hero{
-    background-image: url("../My Images/Cursedark.png");
+    background-image: url("../My Images/edark.png");
 }
 
 /* Hero -Content */
@@ -1599,12 +1601,17 @@ body{
 
     /* Hero */
 
-.book-hero{
-    min-height: 600px;
-    padding: 110px 20px 0;
-    border-radius: 0;
- background-position: 50% 10px;   
-}
+        .book-hero {
+            background-position: 50% 40%;
+            min-height: 600px;
+            padding: 110px 20px 0;
+            border-radius: 0;
+        }
+
+    body.dark-mode .book-hero{
+        background-position: 95% 10%;
+    }
+
 
 .hero-content{
     max-width: 100%;
@@ -1620,13 +1627,14 @@ body{
     font-size: clamp(3rem, 13vw, 4.8rem);
     line-height: .95;
     margin: .8rem 0 1rem;
+    letter-spacing: 5px;
 }
 
 .book-genres{
     justify-content: center;
     flex-wrap: wrap;
     gap: .7rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .book-genres span{
@@ -1635,7 +1643,7 @@ body{
 }
 
 .book-cover{
-    bottom: -170px;
+    bottom: -190px;
 }
 
 .book-cover img{
@@ -1644,7 +1652,7 @@ body{
 }
 
 .summary-section{
-    padding-top: 10rem;
+    padding-top: 13rem;
 }
 
 .summary-grid{
@@ -1745,6 +1753,7 @@ body{
     }
 }
 
+
 /* Tablet */
 
 @media (min-width:768px) and (max-width:1024px){
@@ -1836,11 +1845,15 @@ body{
 
     /* Hero */
 
-    .book-hero{
-        min-height:750px;
-        padding: 190px 30px 0;
-        border-radius: 0;
-        background-position: 50% 20px;
+      .book-hero {
+            background-position: 50% 40%;
+            min-height: 700px;
+            padding: 110px 20px 0;
+            border-radius: 0;
+        }
+
+    body.dark-mode .book-hero{
+        background-position: 95% 10%;
     }
 
     .hero-content{
@@ -1854,7 +1867,8 @@ body{
     }
 
     .book-title{
-        font-size:clamp(4.5rem,8vw,6rem);
+        font-size: 5rem;
+        letter-spacing: 5px;
     }
 
     .book-genres{
@@ -1869,7 +1883,7 @@ body{
     }
 
     .book-cover{
-        bottom:-150px;
+        bottom:-220px;
     }
 
     .book-cover img{
@@ -1879,7 +1893,7 @@ body{
     /* Summary */
 
     .summary-section{
-        padding-top:12rem;
+        padding-top:15rem;
     }
 
     .summary-grid{
@@ -1894,7 +1908,7 @@ body{
     /* Readers */
 
     .reader-review-section{
-        padding:2rem 0 4rem;
+        padding:4rem 0 6rem;
         margin:-2rem 0 0;
     }
 

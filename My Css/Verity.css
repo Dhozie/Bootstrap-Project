@@ -85,6 +85,8 @@ body {
     transition: width .2s ease-in-out;
 }
 
+/* Find the Book Button  */
+
 #find-book {
     position: fixed;
     bottom: 30px;
@@ -471,7 +473,7 @@ body.dark-mode .theme-toggle .label::before {
     padding: 140px 20px 0;
     text-align: center;
     overflow: visible;
-    background-image: url("../My Images/Curselight.png");
+    background-image: url("../My Images/Vlight.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -479,7 +481,7 @@ body.dark-mode .theme-toggle .label::before {
 }
 
 body.dark-mode .book-hero{
-    background-image: url("../My Images/Cursedark.png");
+    background-image: url("../My Images/vdark.png");
 }
 
 /* Hero -Content */
@@ -1600,10 +1602,11 @@ body{
     /* Hero */
 
 .book-hero{
-    min-height: 600px;
     padding: 110px 20px 0;
-    border-radius: 0;
- background-position: 50% 10px;   
+     background-position: 85% center;
+        background-size: cover;
+        min-height: 600px;
+        border-radius: 0;
 }
 
 .hero-content{
@@ -1634,6 +1637,10 @@ body{
     padding: .55rem 1rem;
 }
 
+ body.dark-mode .book-hero{
+    background-position: 20% center;
+ }
+
 .book-cover{
     bottom: -170px;
 }
@@ -1644,7 +1651,7 @@ body{
 }
 
 .summary-section{
-    padding-top: 10rem;
+    padding-top: 12rem;
 }
 
 .summary-grid{
@@ -1745,6 +1752,7 @@ body{
     }
 }
 
+
 /* Tablet */
 
 @media (min-width:768px) and (max-width:1024px){
@@ -1836,12 +1844,16 @@ body{
 
     /* Hero */
 
-    .book-hero{
-        min-height:750px;
-        padding: 190px 30px 0;
+ .book-hero{
+    padding: 190px 20px 0;
+     background-position: 50% 10%;
+        min-height: 700px;
         border-radius: 0;
-        background-position: 50% 20px;
-    }
+}
+
+body.dark-mode .book-hero{
+     background-position: 25% 10%;
+}
 
     .hero-content{
         max-width:700px;
@@ -1869,7 +1881,7 @@ body{
     }
 
     .book-cover{
-        bottom:-150px;
+        bottom:-220px;
     }
 
     .book-cover img{
@@ -1879,7 +1891,7 @@ body{
     /* Summary */
 
     .summary-section{
-        padding-top:12rem;
+        padding-top:15rem;
     }
 
     .summary-grid{
@@ -1894,7 +1906,7 @@ body{
     /* Readers */
 
     .reader-review-section{
-        padding:2rem 0 4rem;
+        padding:4rem 0 6rem;
         margin:-2rem 0 0;
     }
 

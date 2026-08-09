@@ -471,15 +471,36 @@ body.dark-mode .theme-toggle .label::before {
     padding: 140px 20px 0;
     text-align: center;
     overflow: visible;
-    background-image: url("../My Images/Curselight.png");
+    background-image: url("../My Images/l_barred_202608081959.jpeg");
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: center 45%;
     background-size: cover;
     border-radius: 0 0 120px 120px;
+    isolation: isolate;
 }
 
+/* Light Mode Overlay */
+
+.book-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0, 0, 0, 0.35);
+    z-index:-1;
+    border-radius:0 0 120px 120px;
+}
+
+
+/* Dark Mode */
+
 body.dark-mode .book-hero{
-    background-image: url("../My Images/Cursedark.png");
+    background-image:url("../My Images/d_barred_202608081958.jpeg");
+}
+
+/* Remove the light overlay in dark mode */
+
+body.dark-mode .book-hero::before{
+    display:none;
 }
 
 /* Hero -Content */
@@ -523,7 +544,7 @@ body.dark-mode .book-hero{
     font-weight: 100;
     color: var(--heading-color);
     margin-bottom: 2rem;
-    letter-spacing: -1px;
+    letter-spacing: 4px;
     text-transform: uppercase;
 
 }
@@ -1599,12 +1620,16 @@ body{
 
     /* Hero */
 
-.book-hero{
-    min-height: 600px;
-    padding: 110px 20px 0;
-    border-radius: 0;
- background-position: 50% 10px;   
-}
+    .book-hero{
+        background-position: 50% -20px;
+        padding: 110px 20px 0;
+        min-height: 650px;
+        border-radius: 0;
+    }
+
+    body.dark-mode .book-hero{
+      background-position: left -90px top 30px;
+    }
 
 .hero-content{
     max-width: 100%;
@@ -1644,7 +1669,7 @@ body{
 }
 
 .summary-section{
-    padding-top: 10rem;
+    padding-top: 15rem;
 }
 
 .summary-grid{
@@ -1836,12 +1861,17 @@ body{
 
     /* Hero */
 
-    .book-hero{
-        min-height:750px;
-        padding: 190px 30px 0;
-        border-radius: 0;
-        background-position: 50% 20px;
+        .book-hero {
+            background-position: center top;
+            background-size: cover;
+            min-height: 700px;
+            padding: 200px 30px 0;
+        }
+
+    body.dark-mode .book-hero{
+        background-image: url("../My Images/d_barred_202608081958.jpeg");
     }
+
 
     .hero-content{
         max-width:700px;
@@ -1869,7 +1899,7 @@ body{
     }
 
     .book-cover{
-        bottom:-150px;
+        bottom:-220px;
     }
 
     .book-cover img{
@@ -1879,7 +1909,7 @@ body{
     /* Summary */
 
     .summary-section{
-        padding-top:12rem;
+        padding-top:18rem;
     }
 
     .summary-grid{
@@ -1894,7 +1924,7 @@ body{
     /* Readers */
 
     .reader-review-section{
-        padding:2rem 0 4rem;
+        padding:4rem 0 6rem;
         margin:-2rem 0 0;
     }
 

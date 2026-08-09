@@ -150,20 +150,12 @@ const progressBar = document.querySelector(".progress-bar");
 // Listen for Scroll
 window.addEventListener("scroll", () => {
 
-    // Current Scroll Position
-    const scrollTop = window.scrollY;
-
-    // Total Scrollable Height
-    const documentHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-
-    // Calculate Scroll Percentage
-    const scrollPercentage =
-        (scrollTop / documentHeight) * 100;
-
-    // Update Width
-    progressBar.style.width = scrollPercentage + "%";
+    if (!findBook) return;
+    if (window.scrollY > 300) {
+        findBook.classList.add("show");
+    } else {
+        findBook.classList.remove("show");
+    }
 
 });
 
@@ -294,3 +286,17 @@ if (menuBtn && navLinks) {
     });
 
 }
+
+const findBook = document.getElementById("find-book");
+
+window.addEventListener("scroll", () => {
+
+    if (!findBook) return;
+
+    if (window.scrollY > 300) {
+        findBook.classList.add("show");
+    } else {
+        findBook.classList.remove("show");
+    }
+
+});
