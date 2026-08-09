@@ -1641,7 +1641,7 @@ body.dark-mode .book-title{
 }
 
 .book-cover{
-    bottom: -200px;
+    bottom: -220px;
 }
 
 .book-cover img{
@@ -1650,7 +1650,7 @@ body.dark-mode .book-title{
 }
 
 .summary-section{
-    padding-top: 17rem;
+    padding-top: 21rem;
 }
 
 .summary-grid{
