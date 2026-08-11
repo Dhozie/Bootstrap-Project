@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up | NovelNest</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="My Css/reg.css">
+    <link rel="stylesheet" href="dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="auth-nav">
+
+    <a href="home.html" class="logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-book-open"></i>
+        </div>
+
+        <div class="logo-text">
+
+            <h2>NovelNest</h2>
+
+            <div class="logo-subtitle">
+                <span>Book</span>
+                <span>Club</span>
+            </div>
+
+        </div>
+
+    </a>
+
+    <div class="theme-toggle">
+
+        <input type="checkbox" id="themeToggle">
+
+        <label for="themeToggle" class="label">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </label>
+
+    </div>
+
+</nav>
+
+<!-- Registeration and Login Section -->
+
+<main class="auth-section">
+
+        <!-- Image / Branding Section -->
+
+        <section class="auth-image-section">
+             <img src="My Images/Login.jfif" alt="Books and reading" id="authImage">
+
+            <div class="auth-image-overlay"></div>
+            <div class="auth-image-content">
+                <div class="auth-image-text">
+                    <h2> Discover Stories Worth Reading. </h2>
+                    <p>
+                        Discover stories, save your favorites,
+                        and join a community of readers who
+                        believe every page is worth turning.
+                    </p>
+
+                </div>
+
+                <a href="home.html" class="back-home-btn">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Home
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Authentication Section -->
+
+        <section class="auth-form-section">
+            <div class="auth-container">
+        
+                <!--Heading-->
+                <div class="auth-header">
+                    <div class="auth-logo">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>NovelNest</span>
+                    </div>
+                    <h1>Continue Your Reading Journey</h1>
+        
+                    <p>
+                        Log in or create an account to discover stories, save your favorites, and keep your reading journey
+                        going.
+                    </p>
+        
+                </div>
+
+
+                <!-- Login / Sign Up Switch -->
+
+                <div class="auth-tabs" role="tablist" aria-label="Authentication options">
+
+                    <button type="button" class="auth-tab active" id="loginTab" role="tab" aria-selected="true"
+                        aria-controls="loginForm">
+
+                        Login
+
+                    </button>
+
+                
+
+                    <button type="button" class="auth-tab" id="signupTab" role="tab" aria-selected="false"
+                        aria-controls="signupForm">
+
+                        Create Account
+
+                    </button>
+
+                </div>
+
+
+                <!-- Login Form -->
+
+                <form class="auth-form" id="loginForm" role="tabpanel">
+
+                    <div class="form-group">
+
+                        <label for="loginEmail">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            Email Address
+
+                        </label>
+
+                        <input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your email"
+                            autocomplete="email" required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <div class="form-label-row">
+
+                            <label for="loginPassword">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                Password
+
+                            </label>
+
+                            <a href="#" class="forgot-password">
+
+                                Forgot Password?
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="password-field">
+
+                            <input type="password" id="loginPassword" name="loginPassword"
+                                placeholder="Enter your password" autocomplete="current-password" required>
+
+                            <button type="button" class="password-toggle" aria-label="Show password"
+                                data-target="loginPassword">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="remember-me">
+
+                        <label>
+
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <button type="submit" class="auth-btn">
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                        Login
+
+                    </button>
+
+
+                    <p class="auth-switch-text">
+
+                        Don't have an account?
+
+                        <button type="button" class="switch-form-btn" id="goToSignup">
+
+                            Sign Up
+
+                        </button>
+
+                    </p>
+
+                </form>
+
+
+                <!-- Sign Up Form -->
+
+                <form class="auth-form hidden" id="signupForm" role="tabpanel" aria-hidden="true">
+
+                    <div class="form-group">
+
+                        <label for="signupName">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            Full Name
+
+                        </label>
+
+                        <input type="text" id="signupName" name="signupName" placeholder="Enter your full name"
+                            autocomplete="name" required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="signupEmail">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            Email Address
+
+                        </label>
+
+                        <input type="email" id="signupEmail" name="signupEmail" placeholder="Enter your email"
+                            autocomplete="email" required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="signupPassword">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            Password
+
+                        </label>
+
+
+                        <div class="password-field">
+
+                            <input type="password" id="signupPassword" name="signupPassword"
+                                placeholder="Create a password" autocomplete="new-password" required>
+
+                            <button type="button" class="password-toggle" aria-label="Show password"
+                                data-target="signupPassword">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            Confirm Password
+
+                        </label>
+
+
+                        <div class="password-field">
+
+                            <input type="password" id="confirmPassword" name="confirmPassword"
+                                placeholder="Confirm your password" autocomplete="new-password" required>
+
+                            <button type="button" class="password-toggle" aria-label="Show password"
+                                data-target="confirmPassword">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="terms-checkbox">
+
+                        <label>
+
+                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+
+                            <span>
+
+                                I agree to the
+
+                                <a href="#">
+                                    Terms & Conditions
+                                </a>
+
+                                and
+
+                                <a href="#">
+                                    Privacy Policy
+                                </a>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <button type="submit" class="auth-btn">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Create Account
+
+                    </button>
+
+
+                    <p class="auth-switch-text">
+
+                        Already have an account?
+
+                        <button type="button" class="switch-form-btn" id="goToLogin">
+
+                            Login
+
+                        </button>
+
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/bootstrap.bundle.js"></script>
+
+    <script src="dist/aos.js"></script>
+
+    <script src="My Js/style.js"></script>
+
+
+
+</body>
+
+</html>
