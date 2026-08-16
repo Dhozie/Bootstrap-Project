@@ -9,7 +9,7 @@ html {
 }
 
 :root {
-    --bg-color: #f5f5f5;
+    --bg-color: #E3DED7;
     --surface-color: #FFFBF5;
     --card-color: #F2E8D8;
     --primary-color: #6A4E3B;
@@ -659,10 +659,8 @@ body.dark-mode .back-home-btn {
     padding: 100px 1rem 20px;
 }
 
-.auth-image-section {
-    height: 420px;
-    min-height: 420px;
-    border-radius: 20px;
+    .auth-image-section {
+    display: none;
 }
 
 .auth-image-content {
@@ -687,13 +685,23 @@ body.dark-mode .back-home-btn {
     font-size: clamp(.95rem, 3vw, 1.05rem);
 }
 
-.back-home-btn {
+    .back-home-btn {
     margin-top: auto;
     align-self: flex-end;
     margin-right: 10px;
     font-size: 1rem;
     padding: 10px 16px;
 }
+
+    /* When the back button is moved into the form container on mobile */
+    .auth-container .back-home-btn {
+        display: inline-flex;
+        margin-top: 18px;
+        justify-self: end;
+        background: transparent;
+        color: var(--heading-color);
+        border: 1px solid var(--border-color);
+    }
 
     .auth-container {
         padding: 30px;
