@@ -1584,12 +1584,12 @@ body{
         border-radius:10px;
     }
 
-    .login-btn{
-        width:100%;
-        margin-top:1rem;
-        text-align:center;
-        padding:.8rem .3rem;
-        font-size:.95rem;
+    .login-btn {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        padding: .1rem .3rem;
+        font-size: 1.6rem;
     }
 
     .theme-toggle .label{
@@ -1852,11 +1852,6 @@ body.dark-mode .book-title{
         padding:130px 30px 0;
         background-position: 25% 35%;
     }
-
-    body.dark-mode .book-hero{
-
-    }
-
 
     .hero-content{
         max-width:700px;

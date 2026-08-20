@@ -433,7 +433,7 @@ body.dark-mode .library-hero h1 {
     color: var(--card-color);
     font-family: 'Times New Roman', Times, serif;
     font-size: clamp(2rem, 3vw, 2.5rem);
-    font-weight: 100;
+    font-weight: 900;
     line-height: 1.2;
     text-transform: capitalize;
 }
@@ -443,6 +443,7 @@ body.dark-mode .library-hero>p:not(.library-label) {
 }
 
 .book-search {
+    position: relative;
     display: flex;
     align-items: center;
     max-width: 700px;
@@ -452,6 +453,46 @@ body.dark-mode .library-hero>p:not(.library-label) {
     border: 1px solid var(--border-color);
     border-radius: 50px;
     box-shadow: var(--shadow);
+}
+
+/* Search suggestions */
+.search-suggestions {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 10%;
+    width: 80%;
+    max-width: 500px;
+    background: rgba(255, 250, 244, 0.88);
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    display: none;
+    z-index: 1000;
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+/* Individual suggestion */
+.search-suggestion {
+    padding: 12px 16px;
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+body.dark-mode .search-suggestion{
+    color: var(--card-color);
+}
+/* Hover */
+
+.search-suggestion:hover {
+    background: rgba(0, 0, 0, 0.08);
+
+    color: #000;
 }
 
 .book-search i {
@@ -468,9 +509,9 @@ body.dark-mode .library-hero>p:not(.library-label) {
     background: transparent;
     color: var(--heading-color);
     padding: 14px;
-    font-family: inherit;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 100;
-    font-size: 1rem;
+    font-size: 1.2rem;
     letter-spacing: 3px;
 }
 
@@ -494,67 +535,262 @@ body.dark-mode .library-hero>p:not(.library-label) {
 
 /* Category Section */
 
-.categories-section {
-    padding: 5rem 0;
-    background: var(--bg-color);
+
+/* Grid Section  */
+.genre-claim-grid {
+    --genre-ink: var(--heading-color);
+    --genre-muted: var(--text-light);
+    --genre-shell: var(--surface-color);
+    --genre-border: var(--border-color);
+    --genre-accent: var(--accent-color);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.categories-section .library-label {
-    margin-bottom: 1rem;
+/* Genre Items */
+.genre-claim {
+    position: relative;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--genre-ink);
+    background: var(--genre-shell);
+    border: 1px solid var(--genre-border);
+    border-radius: 18px;
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        background-color 0.35s ease;
 }
 
-.categories-section h2 {
-    color: var(--heading-color);
-    font-size: 4rem;
+/* Animated Line */
+.genre-claim::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--genre-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s ease;
+}
+
+/* Glow */
+.genre-claim::after {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    top: -65px;
+    right: -65px;
+    border-radius: 50%;
+    background: var(--genre-accent);
+    opacity: 0;
+    transform: scale(0.7);
+    transition:
+        opacity 0.4s ease,
+        transform 0.5s ease;
+}
+
+/* Hover */
+.genre-claim:hover {
+    transform: translateY(-7px);
+    border-color: var(--genre-accent);
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.12);
+    color: var(--genre-ink);
+}
+
+.genre-claim:hover::before {
+    transform: scaleX(1);
+}
+
+.genre-claim:hover::after {
+    opacity: 0.08;
+    transform: scale(1.4);
+}
+
+/* Number */
+.genre-claim-number {
+    position: relative;
+    z-index: 2;
+   font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    color: var(--genre-accent);
+    opacity: 0.8;
+}
+
+/* Icons */
+.genre-claim-icon {
+    position: relative;
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    border-radius: 15px;
+    background: color-mix(
+        in srgb,
+        var(--genre-accent) 10%,
+        transparent
+    );
+    color: var(--genre-accent);
+    font-size: 1.5rem;
+    transition:
+        transform 0.4s ease,
+        border-radius 0.4s ease,
+        background-color 0.4s ease,
+        color 0.4s ease;
+}
+
+.genre-claim:hover .genre-claim-icon {
+    transform:
+        rotate(-8deg)
+        scale(1.12);
+    border-radius: 50%;
+    background: var(--genre-accent);
+    color: #ffffff;
+}
+
+/* Content */
+.genre-claim-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+}
+
+.genre-claim-content strong {
+    color: var(--genre-ink);
+    font-size: 1.50rem;
     font-weight: 100;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
 }
 
-.category-description {
-    max-width: 600px;
-    color: var(--text-light);
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.2rem;
+.genre-claim:hover .genre-claim-content strong {
+    transform: translateX(5px);
+    color: var(--genre-accent);
 }
 
-
-.category-card .card {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color) !important;
-    border-radius: 20px;
-    color: var(--heading-color);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-.category-card:hover .card {
-    transform: translateY(-8px);
-    border-color: var(--accent-color) !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
-}
-
-.category-icon {
-    font-size: 2rem;
-    color: var(--accent-color);
-    transition: var(--transition);
-}
-
-.category-card:hover .category-icon {
-    transform: scale(1.15);
-    color: var(--secondary-color);
-}
-
-.category-card h3 {
-    color: var(--heading-color);
-    font-weight: 100;
-    letter-spacing: 2px;
-    font-size: 2rem;
-}
-
-.category-card p {
-    color: var(--text-light) !important;
-    line-height: 1.5;
+.genre-claim-content span {
+    margin-top: 7px;
+    color: var(--genre-muted);
     font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.genre-claim-arrow {
+    position: relative;
+    z-index: 2;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    border: 1px solid var(--genre-border);
+    border-radius: 50%;
+    color: var(--genre-ink);
+    transition:
+        transform 0.35s ease,
+        background-color 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.genre-claim-arrow i {
+    font-size: 1rem;
+    transform: scaleX(1.2);
+}
+
+
+.genre-claim:hover .genre-claim-arrow {
+    transform: translateX(7px);
+
+    background: var(--genre-accent);
+
+    border-color: var(--genre-accent);
+
+    color: #ffffff;
+}
+
+
+/* Accesibility */
+.genre-claim:focus-visible {
+    outline: 3px solid var(--genre-accent);
+    outline-offset: 4px;
+}
+
+body.dark-mode .genre-claim {
+    background: var(--surface-color);
+
+    border-color: var(--border-color);
+}
+
+body.dark-mode .genre-claim-content strong {
+    color: var(--heading-color);
+}
+
+body.dark-mode .genre-claim-content span {
+    color: var(--text-light);
+}
+ 
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .genre-claim,
+    .genre-claim::before,
+    .genre-claim::after,
+    .genre-claim-icon,
+    .genre-claim-content strong,
+    .genre-claim-arrow {
+        transition: none !important;
+    }
+
+
+    .genre-claim:hover {
+        transform: none;
+    }
+
+
+    .genre-claim:hover .genre-claim-icon {
+        transform: none;
+    }
+
+
+    .genre-claim:hover .genre-claim-content strong {
+        transform: none;
+    }
+
+
+    .genre-claim:hover .genre-claim-arrow {
+        transform: none;
+    }
+
 }
 
 /* All Books */
@@ -680,7 +916,7 @@ body.dark-mode .library-hero>p:not(.library-label) {
     padding: 12px 22px;
     border-radius: 30px 25%;
     background: var(--accent-color);
-    color: var(--surface-color);
+    color: var(--card-color);
     text-decoration: none;
     font-weight: 100;
     font-size: 1rem;
@@ -741,6 +977,50 @@ body.dark-mode .library-hero>p:not(.library-label) {
     font-size: .9rem;
     line-height: 1.5;
     min-height: 4.5em;
+}
+
+/* Pagination */
+.library-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.pagination-btn,
+.page-number {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    background: transparent;
+    color: inherit;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.page-numbers {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination-btn:hover,
+.page-number:hover {
+    transform: translateY(-2px);
+}
+
+.page-number.active {
+    font-weight: 700;
 }
 
 
@@ -1122,9 +1402,9 @@ body.dark-mode .library-hero>p:not(.library-label) {
 
     .login-btn {
         width: 100%;
-        margin-top: 1rem;
+        margin: 0;
         text-align: center;
-        padding: .8rem .3rem;
+        padding: .1rem .3rem;
         font-size: 1.6rem;
     }
 
@@ -1182,37 +1462,45 @@ body.dark-mode .library-hero>p:not(.library-label) {
         padding: 11px 15px;
         font-size: .85rem;
         letter-spacing: 1px;
+    }   .genre-claim-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
     }
 
-    .categories-section {
-        padding: 3.5rem 1rem;
-    }
 
-    .categories-section h2 {
-        font-size: 2.5rem;
-        letter-spacing: 1px;
-    }
+    .genre-claim {
+        min-height: 185px;
 
-    .category-description {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
+        padding: 20px;
 
-    .category-card .card {
         border-radius: 15px;
     }
 
-    .category-icon {
-        font-size: 1.7rem;
+
+    .genre-claim-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 1.1rem;
     }
 
-    .category-card h3 {
-        font-size: 1.4rem;
+
+    .genre-claim-content strong {
+        font-size: 1.1rem;
     }
 
-    .category-card p {
-        font-size: .85rem;
+
+    .genre-claim-content span {
+        font-size: 0.82rem;
     }
+
+
+    .genre-claim-arrow {
+        width: 33px;
+        height: 33px;
+    }
+
 
 
     /* All Books */
@@ -1494,24 +1782,8 @@ body.dark-mode .library-hero>p:not(.library-label) {
     }
 
     /* Categories and Book Grid */
-    .categories-section {
-        padding: 4rem 1.5rem;
-    }
-
-    .categories-section h2 {
-        font-size: 3.2rem;
-    }
-
-    .category-description {
-        font-size: 1.05rem;
-    }
-
-    .category-card h3 {
-        font-size: 1.6rem;
-    }
-
-    .category-card p {
-        font-size: .95rem;
+    .genre-claim-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .section-heading h2 {

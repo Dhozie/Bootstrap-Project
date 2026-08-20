@@ -1586,14 +1586,14 @@ body.dark-mode .carousel-control-next:hover {
         border-radius: 10px;
     }
 
-    .login-btn {
+.login-btn {
         width: 100%;
-        margin-top: 1rem;
+        margin: 0;
         text-align: center;
-        padding: .8rem .3rem;
-        font-size: .95rem;
+        padding: .1rem .3rem;
+        font-size: 1.6rem;
     }
-
+    
     .theme-toggle .label {
         width: 64px;
         height: 42px;

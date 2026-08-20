@@ -2408,12 +2408,12 @@ body.dark .input-group input:valid+label {
         border-radius:10px;
     }
 
-    .login-btn{
-        width:100%;
-        margin-top:1rem;
-        text-align:center;
-        padding:.8rem .3rem;
-        font-size:1.6rem;
+    .login-btn {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        padding: .1rem .3rem;
+        font-size: 1.6rem;
     }
 
     .theme-toggle .label{
