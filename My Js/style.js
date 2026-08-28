@@ -550,7 +550,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // Pagination settings
-    const booksPerPage = 12;
+    const booksPerPage = 8;
 
     let currentPage = 1;
 
@@ -705,6 +705,200 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
     }
+
+    // Browse More Pagination
+
+const browseBooks = document.querySelectorAll(
+    "#browseBooks > div"
+);
+
+if (browseBooks.length > 0) {
+
+    const browsePageNumbers =
+        document.getElementById(
+            "browsePageNumbers"
+        );
+
+    const browsePrevPage =
+        document.getElementById(
+            "browsePrevPage"
+        );
+
+    const browseNextPage =
+        document.getElementById(
+            "browseNextPage"
+        );
+
+
+    // Settings
+
+    const browseBooksPerPage = 3;
+
+    let browseCurrentPage = 1;
+
+    let browseTotalPages = Math.ceil(
+        browseBooks.length /
+        browseBooksPerPage
+    );
+
+
+    // Display Books
+
+    function displayBrowsePage() {
+
+        const startIndex =
+            (browseCurrentPage - 1) *
+            browseBooksPerPage;
+
+        const endIndex =
+            startIndex +
+            browseBooksPerPage;
+
+
+        browseBooks.forEach(book => {
+
+            book.style.display = "none";
+
+        });
+
+
+        browseBooks.forEach((book, index) => {
+
+            if (
+                index >= startIndex &&
+                index < endIndex
+            ) {
+
+                book.style.display = "";
+
+            }
+
+        });
+
+    }
+
+
+    // Update Pagination
+
+    function updateBrowsePagination() {
+
+        browseTotalPages = Math.ceil(
+            browseBooks.length /
+            browseBooksPerPage
+        );
+
+        browsePageNumbers.innerHTML = "";
+
+
+        for (
+            let page = 1;
+            page <= browseTotalPages;
+            page++
+        ) {
+
+            const button =
+                document.createElement("button");
+
+            button.type = "button";
+
+            button.classList.add(
+                "page-number"
+            );
+
+            button.textContent = page;
+
+
+            if (
+                page === browseCurrentPage
+            ) {
+
+                button.classList.add(
+                    "active"
+                );
+
+            }
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    browseCurrentPage = page;
+
+                    displayBrowsePage();
+
+                    updateBrowsePagination();
+
+                }
+            );
+
+
+            browsePageNumbers.appendChild(
+                button
+            );
+
+        }
+
+
+        // Disable Buttons
+
+        browsePrevPage.disabled =
+            browseCurrentPage === 1;
+
+        browseNextPage.disabled =
+            browseCurrentPage === browseTotalPages;
+
+
+        displayBrowsePage();
+
+    }
+
+
+    // Previous
+
+    browsePrevPage.addEventListener(
+        "click",
+        () => {
+
+            if (
+                browseCurrentPage > 1
+            ) {
+
+                browseCurrentPage--;
+
+                updateBrowsePagination();
+
+            }
+
+        }
+    );
+
+
+    // Next
+
+    browseNextPage.addEventListener(
+        "click",
+        () => {
+
+            if (
+                browseCurrentPage < browseTotalPages
+            ) {
+
+                browseCurrentPage++;
+
+                updateBrowsePagination();
+
+            }
+
+        }
+    );
+
+
+    // Start
+
+    updateBrowsePagination();
+
+}
 
 
     // Filter books

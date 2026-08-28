@@ -1398,6 +1398,58 @@ body.dark-mode .best-sellers .carousel-control-next:hover {
     line-height: 1.6;
 }
 
+/* Browse More Pagination */
+.browse-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.browse-pagination .pagination-btn,
+.browse-pagination .page-number {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.browse-pagination .page-numbers {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.browse-pagination .pagination-btn:hover,
+.browse-pagination .page-number:hover {
+    transform: translateY(-2px);
+}
+
+/* Active page */
+
+.browse-pagination .page-number.active {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* Disabled buttons */
+
+.browse-pagination .pagination-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+}
+
 /* Cards */
 
 .categories {

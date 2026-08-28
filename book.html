@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovelNest | Book</title>
+    <link rel="stylesheet" href="My Css/book.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+     <!-- Progress-Bar or Scroll Progress -->
+    <div class="progress-bar"></div>
+    
+    <!-- Nav Bar -->
+     <nav class="auth-nav">
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-book-open"></i>
+        </div>
+
+        <div class="logo-text">
+            <h2>NovelNest</h2>
+
+            <div class="logo-subtitle">
+                <span>Book</span>
+                <span>Club</span>
+            </div>
+
+        </div>
+
+    </a>
+
+    <div class="theme-toggle">
+
+        <input type="checkbox" id="themeToggle">
+
+        <label for="themeToggle" class="label">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </label>
+
+    </div>
+
+</nav>
+
+   <!-- Book Hero -->
+
+    <section class="book-hero">
+
+        <div class="book-hero-content">
+
+            <p class="book-author" id="bookAuthor">
+                Frank Herbert
+            </p>
+
+            <h1 class="book-title" id="bookTitle">
+                Dune
+            </h1>
+
+            <div class="book-genres" id="bookGenres">
+                <span>Science Fiction</span>
+                <span>Adventure</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="book-cover">
+
+            <img
+                id="bookCover"
+                src="My Images/Dune.jfif"
+                alt="Dune"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- Book Details -->
+
+    <main class="book-main">
+
+
+        <!-- Rating -->
+
+        <section class="book-rating-section">
+
+            <div class="rating-stars" id="bookStars">
+
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+
+            </div>
+
+            <div class="rating-text">
+
+                <strong id="bookRating">
+                    4.8
+                </strong>
+
+                <span>
+                    (<span id="reviewCount">1,240</span> Reviews)
+                </span>
+
+            </div>
+
+            <div class="book-price" id="bookPrice">
+                ₦48,500
+            </div>
+
+
+          <div class="book-actions">
+
+    <a href="reg.html" class="buy-btn">
+        Buy Now
+    </a>
+
+    <a href="reg.html" class="cart-btn">
+        <i class="fa-solid fa-cart-shopping"></i>
+        Add to Cart
+    </a>
+
+</div>
+
+        </section>
+
+
+
+        <!-- Book Information -->
+
+        <section class="book-information">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    BOOK DETAILS
+                </span>
+
+                <h2>
+                    Book Information
+                </h2>
+
+            </div>
+
+
+            <div class="book-info-grid">
+
+
+                <div class="info-item">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <div>
+                        <span>Author</span>
+                        <strong id="infoAuthor">
+                            Frank Herbert
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    <div>
+                        <span>Publisher</span>
+                        <strong id="infoPublisher">
+                            Chilton Books
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <i class="fa-solid fa-calendar"></i>
+
+                    <div>
+                        <span>Published</span>
+                        <strong id="infoPublication">
+                            1965
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <i class="fa-solid fa-book"></i>
+
+                    <div>
+                        <span>Pages</span>
+                        <strong id="infoPages">
+                            688
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <i class="fa-solid fa-language"></i>
+
+                    <div>
+                        <span>Language</span>
+                        <strong id="infoLanguage">
+                            English
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <i class="fa-solid fa-barcode"></i>
+
+                    <div>
+                        <span>ISBN</span>
+                        <strong id="infoISBN">
+                            9780441172719
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- About The Book -->
+
+        <section class="about-book">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    ABOUT THE BOOK
+                </span>
+
+                <h2>
+                   The Story
+                </h2>
+
+            </div>
+
+
+            <div class="about-content" id="bookSummary">
+                <!-- JavaScript generates the reason cards here -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Why You'll Love It -->
+
+<section class="why-love">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            WHY YOU'LL LOVE IT
+        </span>
+
+        <h2>
+            What Makes It Special
+        </h2>
+
+    </div>
+
+
+    <div class="reasons-grid" id="bookReasons">
+
+        <!-- JavaScript generates the reason cards here -->
+
+    </div>
+
+</section>
+
+
+        <!-- Preview -->
+
+        <section class="book-preview">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    PREVIEW
+                </span>
+
+                <h2>
+                    First Chapter
+                </h2>
+
+            </div>
+
+
+            <div class="preview-box">
+
+                <p id="bookPreview">
+
+                    The beginning of an unforgettable journey
+                    into a world of power, survival and destiny...
+
+                </p>
+
+
+               <a href="reg.html" class="preview-btn">
+        Continue Reading
+    </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Reader Reviews -->
+
+        <section class="reader-reviews">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    READER REVIEWS
+                </span>
+
+                <h2>
+                    What Readers Are Saying
+                </h2>
+
+            </div>
+
+<div class="reader-reviews-grid" id="readerReviews">
+
+    <!-- JavaScript generates the reviews here -->
+
+</div>
+
+        </section>
+
+
+
+        <!-- Related Books -->
+
+        <section class="related-books">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    YOU MAY ALSO LIKE
+                </span>
+
+                <h2>
+                    Related Books
+                </h2>
+
+            </div>
+
+
+            <div
+                class="related-books-grid"
+                id="relatedBooks">
+
+                <!-- JavaScript will insert books here -->
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+    <a href="library.html#all-books" class="back-to-books">
+    <i class="fas fa-arrow-left"></i>
+    Go Back to All Books
+</a>
+
+
+
+
+    <script src="My Js/book.js"></script>
+
+</body>
+
+</html>
