@@ -13,12 +13,24 @@
 
 <body>
 
-    <!-- Preloader -->
-    <div id="preloader">
-        <video id="intro-video" autoplay muted loop playsinline preload="auto">
-            <source src="My Videos/Preloader 3 (2).mp4" type="video/mp4">
-        </video>
+ <div id="page-loader">
+
+    <div class="loader-content">
+
+        <h2>NovelNest</h2>
+
+        <div class="loader-bar">
+            <div class="loader-progress" id="loaderProgress"></div>
+        </div>
+
+        <div class="loader-info">
+            <span>Preparing your library...</span>
+            <span id="loaderPercentage">0%</span>
+        </div>
+
     </div>
+
+</div>
 
     <!-- Progress-Bar or Scroll Progress -->
     <div class="progress-bar"></div>
@@ -764,7 +776,7 @@
                                 <span class="book-badge">FEATURED</span>
 
                                 <div class="book-overlay">
-                                    <a href="Enders Game.html" class="read-more">
+                                    <a href="book.html?book=enders-game" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -800,7 +812,7 @@
                                 <span class="book-badge">FEATURED</span>
 
                                 <div class="book-overlay">
-                                    <a href="Fahrenheit 451.html" class="read-more">
+                                    <a href="book.html?book=fahrenheit-451" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -836,7 +848,7 @@
                                 <span class="book-badge">BESTSELLER</span>
 
                                 <div class="book-overlay">
-                                    <a href="The Fault in Our Stars.html" class="read-more">
+                                    <a href="book.html?book=the-fault-in-our-stars" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -872,7 +884,7 @@
                                 <span class="book-badge">BESTSELLER</span>
 
                                 <div class="book-overlay">
-                                    <a href="Gone Girl.html" class="read-more">
+                                    <a href="book.html?book=gone-girl" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -908,7 +920,7 @@
                                 <span class="book-badge">NEW</span>
 
                                 <div class="book-overlay">
-                                    <a href="The Girl on the Train.html" class="read-more">
+                                    <a href="book.html?book=the-girl-on-the-train" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -944,7 +956,7 @@
                                 <span class="book-badge">BESTSELLER</span>
 
                                 <div class="book-overlay">
-                                    <a href="Harry Potter.html" class="read-more">
+                                    <a href="book.html?book=harry-potter" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -981,7 +993,7 @@
                                 <span class="book-badge">CLASSIC</span>
 
                                 <div class="book-overlay">
-                                    <a href="How to Win Friends.html" class="read-more">
+                                    <a href="book.html?book=how-to-win-friends" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1017,7 +1029,7 @@
                                 <span class="book-badge">POPULAR</span>
 
                                 <div class="book-overlay">
-                                    <a href="House of Leaves.html" class="read-more">
+                                    <a href="book.html?book=house-of-leaves" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1053,7 +1065,7 @@
                                 <span class="book-badge">BESTSELLER</span>
 
                                 <div class="book-overlay">
-                                    <a href="It.html" class="read-more">
+                                    <a href="book.html?book=it" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1089,7 +1101,7 @@
                                 <span class="book-badge">NEW</span>
 
                                 <div class="book-overlay">
-                                    <a href="It Ends with Us.html" class="read-more">
+                                    <a href="book.html?book=it-ends-with-us" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1125,7 +1137,7 @@
                                 <span class="book-badge">FEATURED</span>
 
                                 <div class="book-overlay">
-                                    <a href="Me Before You.html" class="read-more">
+                                    <a href="book.html?book=me-before-you" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1161,7 +1173,7 @@
                                 <span class="book-badge">NEW</span>
 
                                 <div class="book-overlay">
-                                    <a href="The Name of the Wind.html" class="read-more">
+                                    <a href="book.html?book=the-name-of-the-wind" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1197,7 +1209,7 @@
                                 <span class="book-badge">CLASSIC</span>
 
                                 <div class="book-overlay">
-                                    <a href="The Notebook.html" class="read-more">
+                                    <a href="book.html?book=the-notebook" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1233,7 +1245,7 @@
                                 <span class="book-badge">FEATURED</span>
 
                                 <div class="book-overlay">
-                                    <a href="The Omen.html" class="read-more">
+                                    <a href="book.html?book=the-omen" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1269,7 +1281,7 @@
                                 <span class="book-badge">POPULAR</span>
 
                                 <div class="book-overlay">
-                                    <a href="The Power of Now.html" class="read-more">
+                                    <a href="book.html?book=the-power-of-now" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1305,7 +1317,7 @@
                                 <span class="book-badge">NEW</span>
 
                                 <div class="book-overlay">
-                                    <a href="Project Hail Mary.html" class="read-more">
+                                    <a href="book.html?book=project-hail-mary" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1341,7 +1353,7 @@
                                 <span class="book-badge">NEW</span>
 
                                 <div class="book-overlay">
-                                    <a href="Rich Dad Poor Dad.html" class="read-more">
+                                    <a href="book.html?book=rich-dad-poor-dad" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1377,7 +1389,7 @@
                                 <span class="book-badge">NEW</span>
 
                                 <div class="book-overlay">
-                                    <a href="Salems Lot.html" class="read-more">
+                                    <a href="book.html?book=salems-lot" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1449,7 +1461,7 @@
                                 <span class="book-badge">CLASSIC</span>
 
                                 <div class="book-overlay">
-                                    <a href="The 7 Habits.html" class="read-more">
+                                    <a href="book.html?book=the-7-habits" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1485,7 +1497,7 @@
                                 <span class="book-badge">FEATURED</span>
 
                                 <div class="book-overlay">
-                                    <a href="The Alchemist.html" class="read-more">
+                                    <a href="book.html?book=the-alchemist" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1557,7 +1569,7 @@
                                 <span class="book-badge">CLASSIC</span>
 
                                 <div class="book-overlay">
-                                    <a href="The Hobbit.html" class="read-more">
+                                    <a href="book.html?book=the-hobbit" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1593,7 +1605,7 @@
                                 <span class="book-badge">POPULAR</span>
 
                                 <div class="book-overlay">
-                                    <a href="The Martian.html" class="read-more">
+                                    <a href="book.html?book=the-martian" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1629,7 +1641,7 @@
                                 <span class="book-badge">CLASSIC</span>
 
                                 <div class="book-overlay">
-                                    <a href="The Shining.html" class="read-more">
+                                    <a href="book.html?book=the-shining" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1665,7 +1677,7 @@
                                 <span class="book-badge">BESTSELLER</span>
 
                                 <div class="book-overlay">
-                                    <a href="The Silent Patient.html" class="read-more">
+                                    <a href="book.html?book=the-silent-patient" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1701,7 +1713,7 @@
                                 <span class="book-badge">CLASSIC</span>
 
                                 <div class="book-overlay">
-                                    <a href="The Time Machine.html" class="read-more">
+                                    <a href="book.html?book=the-time-machine" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1737,7 +1749,7 @@
                                 <span class="book-badge">FEATURED</span>
 
                                 <div class="book-overlay">
-                                    <a href="Think and Grow Rich.html" class="read-more">
+                                    <a href="book.html?book=think-and-grow-rich" class="read-more">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>
@@ -1808,7 +1820,7 @@
             <span class="book-badge">BUSINESS</span>
 
             <div class="book-overlay">
-                <a href="The-Lean-Startup.html" class="read-more">
+                <a href="book.html?book=the-lean-startup" class="read-more">
                     Read More <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -1845,7 +1857,7 @@
             <span class="book-badge">BUSINESS</span>
 
             <div class="book-overlay">
-                <a href="Good-to-Great.html" class="read-more">
+                <a href="book.html?book=good-to-great" class="read-more">
                     Read More <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -1882,7 +1894,7 @@
             <span class="book-badge">BUSINESS</span>
 
             <div class="book-overlay">
-                <a href="The-Psychology-of-Money.html" class="read-more">
+                <a href="book.html?book=the-psychology-of-money" class="read-more">
                     Read More <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -1919,7 +1931,7 @@
             <span class="book-badge">BUSINESS</span>
 
             <div class="book-overlay">
-                <a href="The-100-Startup.html" class="read-more">
+                <a href="book.html?book=the-100-startup" class="read-more">
                     Read More <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -2118,9 +2130,11 @@
 
 
 
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="dist/aos.js"></script>
-    <script src="My Js/style.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+<script src="dist/aos.js"></script>
+<script src="My Js/pageloader.js"></script>
+<script src="My Js/style.js"></script>
+<script src="My Js/library.js"></script>
 </body>
 
 </html>

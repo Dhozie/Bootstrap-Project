@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,48 +13,58 @@
 
 <body>
 
-    <nav class="auth-nav">
+    <!-- PAGE LOADER -->
 
-    <a href="index.html" class="logo">
-
-        <div class="logo-icon">
-            <i class="fa-solid fa-book-open"></i>
+    <div id="page-loader">
+        <div class="loader-book">
+            <span></span>
+            <span></span>
         </div>
-
-        <div class="logo-text">
-
-            <h2>NovelNest</h2>
-
-            <div class="logo-subtitle">
-                <span>Book</span>
-                <span>Club</span>
-            </div>
-
-        </div>
-
-    </a>
-
-    <div class="theme-toggle">
-
-        <input type="checkbox" id="themeToggle">
-
-        <label for="themeToggle" class="label">
-            <span class="sun">☀️</span>
-            <span class="moon">🌙</span>
-        </label>
-
+        <p>Loading...</p>
     </div>
 
-</nav>
+    <nav class="auth-nav">
 
-<!-- Registeration and Login Section -->
+        <a href="index.html" class="logo">
 
-<main class="auth-section">
+            <div class="logo-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <div class="logo-text">
+
+                <h2>NovelNest</h2>
+
+                <div class="logo-subtitle">
+                    <span>Book</span>
+                    <span>Club</span>
+                </div>
+
+            </div>
+
+        </a>
+
+        <div class="theme-toggle">
+
+            <input type="checkbox" id="themeToggle">
+
+            <label for="themeToggle" class="label">
+                <span class="sun">☀️</span>
+                <span class="moon">🌙</span>
+            </label>
+
+        </div>
+
+    </nav>
+
+    <!-- Registeration and Login Section -->
+
+    <main class="auth-section">
 
         <!-- Image / Branding Section -->
 
         <section class="auth-image-section">
-             <img src="My Images/Login.jfif" alt="Books and reading" id="authImage">
+            <img src="My Images/Login.jfif" alt="Books and reading" id="authImage">
 
             <div class="auth-image-overlay"></div>
             <div class="auth-image-content">
@@ -82,7 +93,7 @@
 
         <section class="auth-form-section">
             <div class="auth-container">
-        
+
                 <!--Heading-->
                 <div class="auth-header">
                     <div class="auth-logo">
@@ -90,12 +101,13 @@
                         <span>NovelNest</span>
                     </div>
                     <h1>Continue Your Reading Journey</h1>
-        
+
                     <p>
-                        Log in or create an account to discover stories, save your favorites, and keep your reading journey
+                        Log in or create an account to discover stories, save your favorites, and keep your reading
+                        journey
                         going.
                     </p>
-        
+
                 </div>
 
 
@@ -110,7 +122,7 @@
 
                     </button>
 
-                
+
 
                     <button type="button" class="auth-tab" id="signupTab" role="tab" aria-selected="false"
                         aria-controls="signupForm">
@@ -372,20 +384,21 @@
     <script src="dist/aos.js"></script>
 
     <script src="My Js/style.js"></script>
+    <script src="My Js/auth.js"></script>
 
     <script>
-        (function(){
+        (function () {
             const btn = document.querySelector('.back-home-btn');
             const imgSection = document.querySelector('.auth-image-section');
             const container = document.querySelector('.auth-container');
-            function moveBtn(){
-                if(!btn||!imgSection||!container) return;
-                if(window.innerWidth<=767){
-                    if(!container.contains(btn)) container.appendChild(btn);
+            function moveBtn() {
+                if (!btn || !imgSection || !container) return;
+                if (window.innerWidth <= 767) {
+                    if (!container.contains(btn)) container.appendChild(btn);
                     imgSection.style.display = 'none';
                 } else {
-                    const imageContent = imgSection.querySelector('.auth-image-content')||imgSection;
-                    if(!imageContent.contains(btn)) imageContent.appendChild(btn);
+                    const imageContent = imgSection.querySelector('.auth-image-content') || imgSection;
+                    if (!imageContent.contains(btn)) imageContent.appendChild(btn);
                     imgSection.style.display = '';
                 }
             }

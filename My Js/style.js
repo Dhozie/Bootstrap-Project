@@ -1,4 +1,4 @@
-// PRELOADER
+// PRELOADER 
 
 const preloader = document.getElementById("preloader");
 const introVideo = document.getElementById("intro-video");
@@ -16,7 +16,9 @@ if (preloader && introVideo) {
 }
 
 
-// THEME TOGGLE
+// END PRELOADER
+
+//  THEME TOGGLE
 
 const nav = document.getElementById("mainNav");
 const themeToggle = document.getElementById("themeToggle");
@@ -85,7 +87,9 @@ if (themeToggle) {
 }
 
 
-// COUNTER
+// END THEME TOGGLE
+
+// COUNTER 
 
 const counters =
     document.querySelectorAll(".counter");
@@ -151,7 +155,11 @@ if (counters.length) {
 }
 
 
-// PAGE LOAD
+// END COUNTER
+
+
+
+//  PAGE LOAD
 
 window.addEventListener("load", () => {
 
@@ -184,7 +192,11 @@ window.addEventListener("load", () => {
 });
 
 
-// SCROLL PROGRESS
+// END PAGE LOAD
+
+
+
+//  SCROLL PROGRESS 
 
 const progressBar =
     document.querySelector(".progress-bar");
@@ -211,7 +223,9 @@ window.addEventListener("scroll", () => {
 });
 
 
-// FIND BOOK
+//  END SCROLL PROGRESS 
+
+//  FIND BOOK BUTTON 
 
 const findBook =
     document.getElementById("find-book");
@@ -233,7 +247,9 @@ window.addEventListener("scroll", () => {
 });
 
 
-// SCROLL TO TOP
+//  END FIND BOOK BUTTON 
+
+// SCROLL TO TOP 
 
 const scrollTopBtn =
     document.getElementById("scroll-top");
@@ -270,6 +286,8 @@ if (scrollTopBtn) {
 
 }
 
+
+// END SCROLL TO TOP 
 
 // MOBILE CAROUSEL
 
@@ -351,7 +369,9 @@ function mobileCarouselSetup() {
 mobileCarouselSetup();
 
 
-// MOBILE MENU
+//  END MOBILE CAROUSEL
+
+// MOBILE MENU 
 
 const menuBtn =
     document.querySelector(".menu-btn");
@@ -402,311 +422,9 @@ if (menuBtn && navLinks) {
 
 }
 
+// END MOBILE MENU
 
-// LOGIN / SIGN UP
-
-const loginTab =
-    document.getElementById("loginTab");
-
-const signupTab =
-    document.getElementById("signupTab");
-
-const loginForm =
-    document.getElementById("loginForm");
-
-const signupForm =
-    document.getElementById("signupForm");
-
-const goToSignup =
-    document.getElementById("goToSignup");
-
-const goToLogin =
-    document.getElementById("goToLogin");
-
-const authImage =
-    document.getElementById("authImage");
-
-
-function switchForm(type) {
-
-    if (
-        !loginTab ||
-        !signupTab ||
-        !loginForm ||
-        !signupForm ||
-        !authImage
-    ) return;
-
-    const isLogin =
-        type === "login";
-
-    loginTab.classList.toggle(
-        "active",
-        isLogin
-    );
-
-    signupTab.classList.toggle(
-        "active",
-        !isLogin
-    );
-
-    loginForm.classList.toggle(
-        "hidden",
-        !isLogin
-    );
-
-    signupForm.classList.toggle(
-        "hidden",
-        isLogin
-    );
-
-    authImage.src =
-        isLogin
-            ? "../My Images/Login.jfif"
-            : "../My Images/Signup.jfif";
-
-}
-
-
-if (loginTab) {
-
-    loginTab.addEventListener(
-        "click",
-        () => switchForm("login")
-    );
-
-}
-
-if (signupTab) {
-
-    signupTab.addEventListener(
-        "click",
-        () => switchForm("signup")
-    );
-
-}
-
-if (goToSignup) {
-
-    goToSignup.addEventListener(
-        "click",
-        () => switchForm("signup")
-    );
-
-}
-
-if (goToLogin) {
-
-    goToLogin.addEventListener(
-        "click",
-        () => switchForm("login")
-    );
-
-}
-
-
-// LIBRARY
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    // Get books and category buttons
-    const bookCards = document.querySelectorAll(".book-card");
-
-    const bookSearch =
-        document.getElementById("bookSearch");
-    
-    const searchSuggestions =
-    document.getElementById("searchSuggestions");
-
-    const categoryCards = document.querySelectorAll(
-        ".genre-claim[data-category]"
-    );
-
-    const exploreButtons = document.querySelectorAll(
-        ".btn-category[data-category]"
-    );
-
-
-    // Get pagination elements
-    const bookItems = document.querySelectorAll(
-        "#all-books .row > div"
-    );
-
-    const pagination = document.getElementById(
-        "libraryPagination"
-    );
-
-    const pageNumbers = document.getElementById(
-        "pageNumbers"
-    );
-
-    const prevPage = document.getElementById(
-        "prevPage"
-    );
-
-    const nextPage = document.getElementById(
-        "nextPage"
-    );
-
-
-    // Pagination settings
-    const booksPerPage = 8;
-
-    let currentPage = 1;
-
-    let currentFilteredBooks =
-        Array.from(bookItems);
-
-    let totalPages = Math.ceil(
-        currentFilteredBooks.length /
-        booksPerPage
-    );
-
-
-    console.log(
-        "Total books:",
-        bookItems.length
-    );
-
-    console.log(
-        "Total pages:",
-        totalPages
-    );
-
-
-    // Show books for current page
-    function displayFilteredPage(filteredBooks) {
-
-        const startIndex =
-            (currentPage - 1) *
-            booksPerPage;
-
-        const endIndex =
-            startIndex +
-            booksPerPage;
-
-
-        // Hide all books
-        bookItems.forEach(book => {
-
-            book.style.display = "none";
-
-        });
-
-
-        // Show books for current page
-        filteredBooks.forEach(
-            (book, index) => {
-
-                if (
-                    index >= startIndex &&
-                    index < endIndex
-                ) {
-
-                    book.style.display = "";
-
-                }
-
-            }
-        );
-
-    }
-
-
-    // Create pagination
-    function updatePagination() {
-
-        totalPages = Math.ceil(
-            currentFilteredBooks.length /
-            booksPerPage
-        );
-
-
-        // Keep current page valid
-        if (
-            currentPage > totalPages
-        ) {
-
-            currentPage = totalPages;
-
-        }
-
-
-        if (
-            currentPage < 1
-        ) {
-
-            currentPage = 1;
-
-        }
-
-
-        // Clear page numbers
-        pageNumbers.innerHTML = "";
-
-
-        // Create page numbers
-        for (
-            let page = 1;
-            page <= totalPages;
-            page++
-        ) {
-
-            const button =
-                document.createElement("button");
-
-
-            button.type = "button";
-
-            button.classList.add(
-                "page-number"
-            );
-
-            button.textContent = page;
-
-
-            if (
-                page === currentPage
-            ) {
-
-                button.classList.add(
-                    "active"
-                );
-
-            }
-
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    currentPage = page;
-
-                    displayFilteredPage(
-                        currentFilteredBooks
-                    );
-
-                    updatePagination();
-
-                }
-            );
-
-
-            pageNumbers.appendChild(
-                button
-            );
-
-        }
-
-
-        // Show current page
-        displayFilteredPage(
-            currentFilteredBooks
-        );
-
-    }
-
-    // Browse More Pagination
+// Browse More Pagination
 
 const browseBooks = document.querySelectorAll(
     "#browseBooks > div"
@@ -729,10 +447,14 @@ if (browseBooks.length > 0) {
             "browseNextPage"
         );
 
-
     // Settings
 
-    const browseBooksPerPage = 3;
+    const browseBooksPerPage =
+    window.innerWidth <= 767
+        ? 2
+        : window.innerWidth <= 1024
+        ? 2
+        : 3;
 
     let browseCurrentPage = 1;
 
@@ -740,7 +462,6 @@ if (browseBooks.length > 0) {
         browseBooks.length /
         browseBooksPerPage
     );
-
 
     // Display Books
 
@@ -754,13 +475,9 @@ if (browseBooks.length > 0) {
             startIndex +
             browseBooksPerPage;
 
-
         browseBooks.forEach(book => {
-
             book.style.display = "none";
-
         });
-
 
         browseBooks.forEach((book, index) => {
 
@@ -777,7 +494,6 @@ if (browseBooks.length > 0) {
 
     }
 
-
     // Update Pagination
 
     function updateBrowsePagination() {
@@ -789,7 +505,6 @@ if (browseBooks.length > 0) {
 
         browsePageNumbers.innerHTML = "";
 
-
         for (
             let page = 1;
             page <= browseTotalPages;
@@ -800,13 +515,11 @@ if (browseBooks.length > 0) {
                 document.createElement("button");
 
             button.type = "button";
-
             button.classList.add(
                 "page-number"
             );
 
             button.textContent = page;
-
 
             if (
                 page === browseCurrentPage
@@ -817,7 +530,6 @@ if (browseBooks.length > 0) {
                 );
 
             }
-
 
             button.addEventListener(
                 "click",
@@ -832,13 +544,11 @@ if (browseBooks.length > 0) {
                 }
             );
 
-
             browsePageNumbers.appendChild(
                 button
             );
 
         }
-
 
         // Disable Buttons
 
@@ -848,11 +558,9 @@ if (browseBooks.length > 0) {
         browseNextPage.disabled =
             browseCurrentPage === browseTotalPages;
 
-
         displayBrowsePage();
 
     }
-
 
     // Previous
 
@@ -873,7 +581,6 @@ if (browseBooks.length > 0) {
         }
     );
 
-
     // Next
 
     browseNextPage.addEventListener(
@@ -893,511 +600,8 @@ if (browseBooks.length > 0) {
         }
     );
 
-
     // Start
 
     updateBrowsePagination();
 
 }
-
-
-    // Filter books
-    function filterBooks(category) {
-
-        currentPage = 1;
-
-        const filteredBooks = [];
-
-
-        bookItems.forEach(
-            bookColumn => {
-
-                const book =
-                    bookColumn.querySelector(
-                        ".book-card"
-                    );
-
-
-                if (!book) return;
-
-
-                const bookTags =
-                    book.querySelectorAll(
-                        ".book-tags span"
-                    );
-
-
-                let matches = false;
-
-
-                bookTags.forEach(
-                    tag => {
-
-                        const tagCategory =
-                            tag.textContent
-                                .trim()
-                                .toLowerCase()
-                                .replace(
-                                    /\s+/g,
-                                    "-"
-                                );
-
-
-                        if (
-                            tagCategory ===
-                            category
-                        ) {
-
-                            matches = true;
-
-                        }
-
-                    }
-                );
-
-
-                if (
-                    category === "all" ||
-                    matches
-                ) {
-
-                    filteredBooks.push(
-                        bookColumn
-                    );
-
-                }
-
-            }
-        );
-
-
-        currentFilteredBooks =
-            filteredBooks;
-
-
-        updatePagination();
-
-    }
-
-    // Search books
-function searchBooks(searchTerm) {
-
-    currentPage = 1;
-
-    const searchResults = [];
-
-    const searchText =
-        searchTerm
-            .trim()
-            .toLowerCase();
-
-
-    // Show all books if search is empty
-    if (!searchText) {
-
-        currentFilteredBooks =
-            Array.from(bookItems);
-
-        updatePagination();
-
-        return;
-
-    }
-
-
-    // Search through books
-    bookItems.forEach(
-        bookColumn => {
-
-            const book =
-                bookColumn.querySelector(
-                    ".book-card"
-                );
-
-            if (!book) return;
-
-
-            const title =
-                book.querySelector(
-                    "h3"
-                )?.textContent
-                    .toLowerCase() || "";
-
-
-            const description =
-                book.querySelector(
-                    ".book-info p"
-                )?.textContent
-                    .toLowerCase() || "";
-
-
-            const tags =
-                Array.from(
-                    book.querySelectorAll(
-                        ".book-tags span"
-                    )
-                )
-                .map(
-                    tag =>
-                        tag.textContent
-                            .toLowerCase()
-                )
-                .join(" ");
-
-
-            const searchableText =
-                `${title} ${description} ${tags}`;
-
-
-            if (
-                searchableText.includes(
-                    searchText
-                )
-            ) {
-
-                searchResults.push(
-                    bookColumn
-                );
-
-            }
-
-        }
-    );
-
-
-    // Store search results
-    currentFilteredBooks =
-        searchResults;
-
-
-    // Update pagination
-    updatePagination();
-
-    }
-
-    // Show search suggestions
-function showSearchSuggestions(searchTerm) {
-
-    const searchText =
-        searchTerm
-            .trim()
-            .toLowerCase();
-
-
-    // Clear suggestions
-    searchSuggestions.innerHTML = "";
-
-
-    // Hide suggestions when search is empty
-    if (!searchText) {
-
-        searchSuggestions.style.display =
-            "none";
-
-        return;
-
-    }
-
-
-    const suggestions = [];
-
-
-    // Find matching books
-    bookItems.forEach(
-        bookColumn => {
-
-            const book =
-                bookColumn.querySelector(
-                    ".book-card"
-                );
-
-            if (!book) return;
-
-
-            const title =
-                book.querySelector("h3")
-                    ?.textContent
-                    .trim() || "";
-
-
-            const description =
-                book.querySelector(
-                    ".book-info p"
-                )
-                    ?.textContent
-                    .trim() || "";
-
-
-            const tags =
-                Array.from(
-                    book.querySelectorAll(
-                        ".book-tags span"
-                    )
-                )
-                .map(
-                    tag =>
-                        tag.textContent.trim()
-                )
-                .join(" ");
-
-
-            const searchableText =
-                `${title} ${description} ${tags}`
-                    .toLowerCase();
-
-
-            if (
-                searchableText.includes(
-                    searchText
-                )
-            ) {
-
-                suggestions.push({
-                    book: bookColumn,
-                    title: title
-                });
-
-            }
-
-        }
-    );
-
-
-    // Show matching suggestions
-   suggestions
-    .slice(0, 5)
-    .forEach(
-        suggestion => {
-
-            const item =
-                document.createElement(
-                    "div"
-                );
-
-            item.classList.add(
-                "search-suggestion"
-            );
-
-            item.textContent =
-                suggestion.title;
-
-
-            // Click a suggestion
-          item.addEventListener(
-    "click",
-    () => {
-
-        bookSearch.value =
-            suggestion.title;
-
-        searchBooks(
-            suggestion.title
-        );
-
-        searchSuggestions.style.display =
-            "none";
-
-        document
-            .querySelector(
-                "#all-books"
-            )
-            .scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-    }
-);
-
-
-            searchSuggestions.appendChild(
-                item
-            );
-
-        }
-    );
-
-    // Show or hide the suggestion box
-    if (suggestions.length > 0) {
-
-        searchSuggestions.style.display =
-            "block";
-
-    } else {
-
-        searchSuggestions.style.display =
-            "none";
-
-    }
-
-}
-    
-    // Search input
-bookSearch.addEventListener(
-    "input",
-    () => {
-
-        searchBooks(
-            bookSearch.value
-        );
-
-        showSearchSuggestions(
-            bookSearch.value
-        );
-
-    }
-);
-
-    // Category buttons
-    categoryCards.forEach(
-        category => {
-
-            category.addEventListener(
-                "click",
-                event => {
-
-                    event.preventDefault();
-
-
-                    const selectedCategory =
-                        category.dataset.category
-                            .toLowerCase()
-                            .trim();
-
-
-                    filterBooks(
-                        selectedCategory
-                    );
-
-
-                    document
-                        .querySelector(
-                            "#all-books"
-                        )
-                        .scrollIntoView({
-                            behavior: "smooth",
-                            block: "start"
-                        });
-
-
-                    history.replaceState(
-                        null,
-                        "",
-                        `?category=${selectedCategory}`
-                    );
-
-                }
-            );
-
-        }
-    );
-
-
-    // Home category buttons
-    exploreButtons.forEach(
-        button => {
-
-            button.addEventListener(
-                "click",
-                event => {
-
-                    const category =
-                        button.dataset.category;
-
-
-                    if (!category) return;
-
-
-                    event.preventDefault();
-
-
-                    window.location.href =
-                        `library.html?category=${encodeURIComponent(category)}`;
-
-                }
-            );
-
-        }
-    );
-
-
-    // Previous button
-    prevPage.addEventListener(
-        "click",
-        () => {
-
-            if (
-                currentPage > 1
-            ) {
-
-                currentPage--;
-
-                displayFilteredPage(
-                    currentFilteredBooks
-                );
-
-                updatePagination();
-
-            }
-
-        }
-    );
-
-
-    // Next button
-    nextPage.addEventListener(
-        "click",
-        () => {
-
-            if (
-                currentPage < totalPages
-            ) {
-
-                currentPage++;
-
-                displayFilteredPage(
-                    currentFilteredBooks
-                );
-
-                updatePagination();
-
-            }
-
-        }
-    );
-
-
-    // Check URL category
-    const urlParams =
-        new URLSearchParams(
-            window.location.search
-        );
-
-
-    const categoryFromURL =
-        urlParams.get("category");
-
-
-    if (
-        categoryFromURL &&
-        bookCards.length
-    ) {
-
-        filterBooks(
-            categoryFromURL
-                .toLowerCase()
-                .trim()
-        );
-
-    } else {
-
-        currentFilteredBooks =
-            Array.from(bookItems);
-
-        currentPage = 1;
-
-        updatePagination();
-
-    }
-
-});
