@@ -1,20 +1,51 @@
-// PRELOADER 
+// PRELOADER
 
 const preloader = document.getElementById("preloader");
 const introVideo = document.getElementById("intro-video");
 
 if (preloader && introVideo) {
 
-    introVideo.addEventListener("ended", () => {
-        preloader.classList.add("hide");
-    });
+    // Check if the preloader has already played
+    const hasPlayed = sessionStorage.getItem("introPlayed");
 
-    setTimeout(() => {
+    if (hasPlayed) {
+
+        // Skip the preloader
         preloader.classList.add("hide");
-    }, 8000);
+
+    } else {
+
+        // Play the video
+        introVideo.play();
+
+        // When video finishes
+        introVideo.addEventListener("ended", () => {
+
+            preloader.classList.add("hide");
+
+            // Remember that it has played
+            sessionStorage.setItem(
+                "introPlayed",
+                "true"
+            );
+
+        });
+
+        // Safety timeout
+        setTimeout(() => {
+
+            preloader.classList.add("hide");
+
+            sessionStorage.setItem(
+                "introPlayed",
+                "true"
+            );
+
+        }, 8000);
+
+    }
 
 }
-
 
 // END PRELOADER
 

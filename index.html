@@ -39,12 +39,6 @@
             </div>
         </div>
 
-        <button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
-            <span>Menu</span>
-            <i class="fa-solid fa-bars"></i>
-        </button>
-
-
         <div class="nav-links">
             <ul class="nav nav-pills">
                 <li class="nav-item">
@@ -54,7 +48,7 @@
                     <a class="nav-link" href="library.html">Library</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
                 </li>
             </ul>
 
@@ -62,14 +56,24 @@
                 Login / Sign Up
             </a>
         </div>
-        <div class="theme-toggle">
-            <input type="checkbox" id="themeToggle">
-            <label for="themeToggle" class="label">
-                <span class="sun">☀️</span>
-                <span class="moon">🌙</span>
-            </label>
-        </div>
+        
+        <div class="navbar-actions">
+            <!-- Theme button -->
+            <div class="theme-toggle">
+                <input type="checkbox" id="themeToggle">
 
+                <label for="themeToggle" class="label">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </label>
+            </div>
+
+            <!-- Hamburger -->
+            <button class="menu-btn" type="button">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
     </nav>
 
     <!-- End Of Nav Bar -->
@@ -132,7 +136,7 @@
 
                 <div class="hero-buttons" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
                     <a href="library.html" class="btn">Browse Books</a>
-                    <a href="#" class="btn-outline">Learn More</a>
+                    <a href="contact.html" class="btn-outline">Learn More</a>
                 </div>
 
             </div>
@@ -435,7 +439,7 @@
 
     <section class="browse-more">
 
-        <div class="container text-center">
+        <div class="container-fluid text-center">
 
             <span class="section-label">
                 <i class="fas fa-book-open"></i>
@@ -457,261 +461,264 @@
 
         <!-- Books Grid -->
 
-      <div class="row g-4 mt-4" id="browseBooks">
+        <div class="container-fluid">
+            <div class="row g-4 mt-4" id="browseBooks">
 
-            <!-- Gone Girl -->
-            <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <!-- Gone Girl -->
+                <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
 
-                <div class="home-book-card">
+                    <div class="home-book-card">
 
-                    <div class="home-book-image">
-                        <img src="My Images/Gone Girl.jpeg" alt="Gone Girl">
-                    </div>
+                        <div class="home-book-image">
+                            <img src="My Images/Gone Girl.jpeg" alt="Gone Girl">
+                        </div>
 
-                    <div class="home-book-info">
+                        <div class="home-book-info">
 
-                        <span class="home-book-category">
-                            Thriller
-                        </span>
+                            <span class="home-book-category">
+                                Thriller
+                            </span>
 
-                        <h3>Gone Girl</h3>
+                            <h3>Gone Girl</h3>
 
-                        <p>
-                            A marriage filled with secrets takes a dark turn
-                            when Amy disappears and nothing is as it seems.
-                        </p>
+                            <p>
+                                A marriage filled with secrets takes a dark turn
+                                when Amy disappears and nothing is as it seems.
+                            </p>
 
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- After -->
-            <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="home-book-card">
-
-                    <div class="home-book-image">
-                        <img src="My Images/after.jfif" alt="After">
-                    </div>
-
-                    <div class="home-book-info">
-
-                        <span class="home-book-category">
-                            Romance
-                        </span>
-
-                        <h3>After</h3>
-
-                        <p>
-                            A young woman's life changes when she meets someone
-                            who challenges everything she thought she knew.
-                        </p>
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
+                <!-- After -->
+                <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="200">
 
-            <!-- The Omen -->
-            <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="home-book-card">
 
-                <div class="home-book-card">
+                        <div class="home-book-image">
+                            <img src="My Images/after.jfif" alt="After">
+                        </div>
 
-                    <div class="home-book-image">
-                        <img src="My Images/The Omen.png" alt="The Omen">
-                    </div>
+                        <div class="home-book-info">
 
-                    <div class="home-book-info">
+                            <span class="home-book-category">
+                                Romance
+                            </span>
 
-                        <span class="home-book-category">
-                            Horror
-                        </span>
+                            <h3>After</h3>
 
-                        <h3>The Omen</h3>
+                            <p>
+                                A young woman's life changes when she meets someone
+                                who challenges everything she thought she knew.
+                            </p>
 
-                        <p>
-                            Strange events begin to reveal a terrifying secret
-                            surrounding a child born under a dark sign.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- The Silent Patient -->
-            <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="home-book-card">
-
-                    <div class="home-book-image">
-                        <img src="My Images/The Silent Patient .jpg" alt="The Silent Patient">
-                    </div>
-
-                    <div class="home-book-info">
-
-                        <span class="home-book-category">
-                            Mystery
-                        </span>
-
-                        <h3>The Silent Patient</h3>
-
-                        <p>
-                            A woman refuses to speak after a shocking crime,
-                            leaving a therapist determined to uncover the truth.
-                        </p>
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
+                <!-- The Omen -->
+                <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="300">
 
-            <!-- Behind Closed Doors -->
-            <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="home-book-card">
 
-                <div class="home-book-card">
+                        <div class="home-book-image">
+                            <img src="My Images/The Omen.png" alt="The Omen">
+                        </div>
 
-                    <div class="home-book-image">
-                        <img src="My Images/Behind Closed doors.jpg" alt="Behind Closed Doors">
-                    </div>
+                        <div class="home-book-info">
 
-                    <div class="home-book-info">
+                            <span class="home-book-category">
+                                Horror
+                            </span>
 
-                        <span class="home-book-category">
-                            Thriller
-                        </span>
+                            <h3>The Omen</h3>
 
-                        <h3>Behind Closed Doors</h3>
+                            <p>
+                                Strange events begin to reveal a terrifying secret
+                                surrounding a child born under a dark sign.
+                            </p>
 
-                        <p>
-                            Behind a seemingly perfect marriage lies a
-                            disturbing reality hidden from everyone outside.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Kiss -->
-            <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-
-                <div class="home-book-card">
-
-                    <div class="home-book-image">
-                        <img src="My Images/Kiss.jfif" alt="Kiss">
-                    </div>
-
-                    <div class="home-book-info">
-
-                        <span class="home-book-category">
-                            Romance
-                        </span>
-
-                        <h3>Kiss</h3>
-
-                        <p>
-                            A complicated relationship unfolds through
-                            attraction, emotion, secrets, and unexpected choices.
-                        </p>
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
+                <!-- The Silent Patient -->
+                <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
 
-            <!-- Obsessed -->
-            <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="home-book-card">
 
-                <div class="home-book-card">
+                        <div class="home-book-image">
+                            <img src="My Images/The Silent Patient .jpg" alt="The Silent Patient">
+                        </div>
 
-                    <div class="home-book-image">
-                        <img src="My Images/Obsessed.png" alt="Obsessed">
-                    </div>
+                        <div class="home-book-info">
 
-                    <div class="home-book-info">
+                            <span class="home-book-category">
+                                Mystery
+                            </span>
 
-                        <span class="home-book-category">
-                            Thriller
-                        </span>
+                            <h3>The Silent Patient</h3>
 
-                        <h3>Obsessed</h3>
+                            <p>
+                                A woman refuses to speak after a shocking crime,
+                                leaving a therapist determined to uncover the truth.
+                            </p>
 
-                        <p>
-                            What begins as fascination slowly turns into an
-                            obsession that threatens to destroy everything.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Thr3e -->
-            <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="home-book-card">
-
-                    <div class="home-book-image">
-                        <img src="My Images/Three.jfif" alt="Thr3e">
-                    </div>
-
-                    <div class="home-book-info">
-
-                        <span class="home-book-category">
-                            Thriller
-                        </span>
-
-                        <h3>Thr3e</h3>
-
-                        <p>
-                            A terrifying game begins when a mysterious caller
-                            gives one man three impossible choices.
-                        </p>
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
 
+                <!-- Behind Closed Doors -->
+                <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="200">
 
-            <!-- Akata Witch -->
-            <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="home-book-card">
 
-                <div class="home-book-card">
+                        <div class="home-book-image">
+                            <img src="My Images/Behind Closed doors.jpg" alt="Behind Closed Doors">
+                        </div>
 
-                    <div class="home-book-image">
-                        <img src="My Images/The Witch.jfif" alt="Akata Witch">
+                        <div class="home-book-info">
+
+                            <span class="home-book-category">
+                                Thriller
+                            </span>
+
+                            <h3>Behind Closed Doors</h3>
+
+                            <p>
+                                Behind a seemingly perfect marriage lies a
+                                disturbing reality hidden from everyone outside.
+                            </p>
+
+                        </div>
+
                     </div>
 
-                    <div class="home-book-info">
+                </div>
 
-                        <span class="home-book-category">
-                            Fantasy
-                        </span>
 
-                        <h3>Akata Witch</h3>
+                <!-- Kiss -->
+                <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="300">
 
-                        <p>
-                            A young girl discovers a hidden magical world and
-                            begins a journey that will change her life forever.
-                        </p>
+                    <div class="home-book-card">
+
+                        <div class="home-book-image">
+                            <img src="My Images/Kiss.jfif" alt="Kiss">
+                        </div>
+
+                        <div class="home-book-info">
+
+                            <span class="home-book-category">
+                                Romance
+                            </span>
+
+                            <h3>Kiss</h3>
+
+                            <p>
+                                A complicated relationship unfolds through
+                                attraction, emotion, secrets, and unexpected choices.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Obsessed -->
+                <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="home-book-card">
+
+                        <div class="home-book-image">
+                            <img src="My Images/Obsessed.png" alt="Obsessed">
+                        </div>
+
+                        <div class="home-book-info">
+
+                            <span class="home-book-category">
+                                Thriller
+                            </span>
+
+                            <h3>Obsessed</h3>
+
+                            <p>
+                                What begins as fascination slowly turns into an
+                                obsession that threatens to destroy everything.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Thr3e -->
+                <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="home-book-card">
+
+                        <div class="home-book-image">
+                            <img src="My Images/Three.jfif" alt="Thr3e">
+                        </div>
+
+                        <div class="home-book-info">
+
+                            <span class="home-book-category">
+                                Thriller
+                            </span>
+
+                            <h3>Thr3e</h3>
+
+                            <p>
+                                A terrifying game begins when a mysterious caller
+                                gives one man three impossible choices.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Akata Witch -->
+                <div class="col-6 col-md-4 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+
+                    <div class="home-book-card">
+
+                        <div class="home-book-image">
+                            <img src="My Images/The Witch.jfif" alt="Akata Witch">
+                        </div>
+
+                        <div class="home-book-info">
+
+                            <span class="home-book-category">
+                                Fantasy
+                            </span>
+
+                            <h3>Akata Witch</h3>
+
+                            <p>
+                                A young girl discovers a hidden magical world and
+                                begins a journey that will change her life forever.
+                            </p>
+
+                        </div>
 
                     </div>
 
@@ -721,33 +728,30 @@
 
         </div>
 
-       </div>
+        </div>
 
-<!-- End Books Grid -->
+        <!-- Browse More Pagination -->
+        <div class="browse-pagination" id="browsePagination">
 
+            <button type="button" id="browsePrevPage" class="pagination-btn">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
 
-<!-- Browse More Pagination -->
-<div class="browse-pagination" id="browsePagination">
+            <div id="browsePageNumbers" class="page-numbers"></div>
 
-    <button type="button" id="browsePrevPage" class="pagination-btn">
-        <i class="fa-solid fa-chevron-left"></i>
-    </button>
+            <button type="button" id="browseNextPage" class="pagination-btn">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
 
-    <div id="browsePageNumbers" class="page-numbers"></div>
+        </div>
 
-    <button type="button" id="browseNextPage" class="pagination-btn">
-        <i class="fa-solid fa-chevron-right"></i>
-    </button>
-
-</div>
-
-</section>
+    </section>
     <!-- End Browse More -->
 
     <!-- Cards  -->
 
     <section class="categories">
-        <div class="container">
+        <div class="container-fluid">
             <div class="section-heading text-center mb-5" data-aos="fade-up">
                 <span class="section-subtitle">
                     <i class="fa-solid fa-layer-group"></i>
@@ -1064,9 +1068,9 @@
 
     <!-- Image and Card Section -->
 
-    <section class="why-us">
+    <section class="why-us" id="why-us">
 
-        <div class="container">
+        <div class="container-fluid">
 
             <div class="section-heading text-center mb-5" data-aos="fade-up">
 
@@ -1764,7 +1768,7 @@
 
     <section class="newsletter">
 
-        <div class="container">
+        <div class="container-fluid">
 
             <div class="newsletter-content" data-aos="zoom-in">
 
@@ -1849,15 +1853,15 @@
 
                     <ul>
 
-                        <li><a href="#home">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
 
-                        <li><a href="#about">About</a></li>
+                        <li><a href="index.html#why-us">About</a></li>
 
-                        <li><a href="#featured">Featured</a></li>
+                        <li><a href="library.html">Library</a></li>
 
-                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="library.html#categories">Categories</a></li>
 
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
 
                     </ul>
 
@@ -1872,21 +1876,21 @@
 
                     <ul>
 
-                        <li><a href="#">Romance</a></li>
+                        <li><a href="library.html?category=romance#all-books">Romance</a></li>
 
-                        <li><a href="#">Fantasy</a></li>
+                        <li><a href="library.html?category=fantasy#all-books">Fantasy</a></li>
 
-                        <li><a href="#">Horror</a></li>
+                        <li><a href="library.html?category=horror#all-books">Horror</a></li>
 
-                        <li><a href="#">Thriller</a></li>
+                        <li><a href="library.html?category=thriller#all-books">Thriller</a></li>
 
-                        <li><a href="#">Science Fiction</a></li>
+                        <li><a href="library.html?category=science-fiction#all-books">Science Fiction</a></li>
 
-                        <li><a href="#">Classics</a></li>
+                        <li><a href="library.html?category=classics#all-books">Classics</a></li>
 
-                        <li><a href="#">Business</a></li>
+                        <li><a href="library.html?category=business#all-books">Business</a></li>
 
-                        <li><a href="#">Self Development</a></li>
+                        <li><a href="library.html?category=self-development#all-books">Self Development</a></li>
 
                     </ul>
 

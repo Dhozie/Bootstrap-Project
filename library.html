@@ -13,24 +13,26 @@
 
 <body>
 
- <div id="page-loader">
+    <!-- Page Loader -->
 
-    <div class="loader-content">
+    <div id="page-loader">
 
-        <h2>NovelNest</h2>
+        <div class="loader-content">
 
-        <div class="loader-bar">
-            <div class="loader-progress" id="loaderProgress"></div>
-        </div>
+            <h2>NovelNest</h2>
 
-        <div class="loader-info">
-            <span>Preparing your library...</span>
-            <span id="loaderPercentage">0%</span>
+            <div class="loader-bar">
+                <div class="loader-progress" id="loaderProgress"></div>
+            </div>
+
+            <div class="loader-info">
+                <span>Preparing your library...</span>
+                <span id="loaderPercentage">0%</span>
+            </div>
+
         </div>
 
     </div>
-
-</div>
 
     <!-- Progress-Bar or Scroll Progress -->
     <div class="progress-bar"></div>
@@ -51,12 +53,6 @@
             </div>
         </div>
 
-        <button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
-            <span>Menu</span>
-            <i class="fa-solid fa-bars"></i>
-        </button>
-
-
         <div class="nav-links">
             <ul class="nav nav-pills">
                 <li class="nav-item">
@@ -66,7 +62,7 @@
                     <a class="nav-link active" aria-current="page" href="library.html">Library</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
                 </li>
             </ul>
 
@@ -74,14 +70,25 @@
                 Login / Sign Up
             </a>
         </div>
-        <div class="theme-toggle">
-            <input type="checkbox" id="themeToggle">
-            <label for="themeToggle" class="label">
-                <span class="sun">☀️</span>
-                <span class="moon">🌙</span>
-            </label>
-        </div>
 
+       <div class="navbar-actions">
+            <!-- Theme button -->
+            <div class="theme-toggle">
+                <input type="checkbox" id="themeToggle">
+
+                <label for="themeToggle" class="label">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </label>
+            </div>
+
+
+        <!-- Hamburger -->
+        <button class="menu-btn" type="button">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        </div>
     </nav>
     <!-- End Of Nav -->
 
@@ -105,7 +112,8 @@
 
                 <i class="fa-solid fa-magnifying-glass"></i>
 
-                <input type="search" id="bookSearch" placeholder="Search by title, author, or keyword..." autocomplete="off">
+                <input type="search" id="bookSearch" placeholder="Search by title, author, or keyword..."
+                    autocomplete="off">
 
                 <button type="button">
                     Search
@@ -120,234 +128,218 @@
 
         <!-- Category Section -->
 
-<section class="categories-section py-5" id="categories">
+        <section class="categories-section py-5" id="categories">
 
-    <div class="container">
+            <div class="container-fluid">
 
-        <div class="section-heading text-center mb-5">
-            <span class="section-label">Browse by genre</span>
+                <div class="section-heading text-center mb-5">
+                    <span class="section-label">Browse by genre</span>
 
-            <h2>
-                Find Your Perfect Genre
-            </h2>
+                    <h2>
+                        Find Your Perfect Genre
+                    </h2>
 
-            <p>
-                Explore books across different genres and discover your next favorite story.
-            </p>
-        </div>
+                    <p>
+                        Explore books across different genres and discover your next favorite story.
+                    </p>
+                </div>
 
-        <div class="genre-claim-grid">
+                <div class="genre-claim-grid">
 
-    <!-- Romance -->
-    <a href="#all-books"
-        class="genre-claim"
-        data-category="romance">
+                    <!-- Romance -->
+                    <a href="#all-books" class="genre-claim" data-category="romance">
 
-        <span class="genre-claim-number">01</span>
+                        <span class="genre-claim-number">01</span>
 
-        <span class="genre-claim-icon">
-            <i class="fa-solid fa-heart"></i>
-        </span>
+                        <span class="genre-claim-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </span>
 
-        <span class="genre-claim-content">
-            <strong>Romance</strong>
+                        <span class="genre-claim-content">
+                            <strong>Romance</strong>
 
-            <span>
-                Love, relationships and unforgettable connections.
-            </span>
-        </span>
+                            <span>
+                                Love, relationships and unforgettable connections.
+                            </span>
+                        </span>
 
-        <span class="genre-claim-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
-        </span>
+                        <span class="genre-claim-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
 
-    </a>
+                    </a>
 
 
-    <!-- Fantasy -->
-    <a href="#all-books"
-        class="genre-claim"
-        data-category="fantasy">
+                    <!-- Fantasy -->
+                    <a href="#all-books" class="genre-claim" data-category="fantasy">
 
-        <span class="genre-claim-number">02</span>
+                        <span class="genre-claim-number">02</span>
 
-        <span class="genre-claim-icon">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-        </span>
+                        <span class="genre-claim-icon">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </span>
 
-        <span class="genre-claim-content">
-            <strong>Fantasy</strong>
+                        <span class="genre-claim-content">
+                            <strong>Fantasy</strong>
 
-            <span>
-                Magic, mythical worlds and extraordinary adventures.
-            </span>
-        </span>
+                            <span>
+                                Magic, mythical worlds and extraordinary adventures.
+                            </span>
+                        </span>
 
-        <span class="genre-claim-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
-        </span>
+                        <span class="genre-claim-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
 
-    </a>
+                    </a>
 
 
-    <!-- Horror -->
-    <a href="#all-books"
-        class="genre-claim"
-        data-category="horror">
+                    <!-- Horror -->
+                    <a href="#all-books" class="genre-claim" data-category="horror">
 
-        <span class="genre-claim-number">03</span>
+                        <span class="genre-claim-number">03</span>
 
-        <span class="genre-claim-icon">
-            <i class="fa-solid fa-ghost"></i>
-        </span>
+                        <span class="genre-claim-icon">
+                            <i class="fa-solid fa-ghost"></i>
+                        </span>
 
-        <span class="genre-claim-content">
-            <strong>Horror</strong>
+                        <span class="genre-claim-content">
+                            <strong>Horror</strong>
 
-            <span>
-                Dark stories, terrifying mysteries and suspense.
-            </span>
-        </span>
+                            <span>
+                                Dark stories, terrifying mysteries and suspense.
+                            </span>
+                        </span>
 
-        <span class="genre-claim-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
-        </span>
+                        <span class="genre-claim-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
 
-    </a>
+                    </a>
 
 
-    <!-- Thriller -->
-    <a href="#all-books"
-        class="genre-claim"
-        data-category="thriller">
+                    <!-- Thriller -->
+                    <a href="#all-books" class="genre-claim" data-category="thriller">
 
-        <span class="genre-claim-number">04</span>
+                        <span class="genre-claim-number">04</span>
 
-        <span class="genre-claim-icon">
-            <i class="fa-solid fa-user-secret"></i>
-        </span>
+                        <span class="genre-claim-icon">
+                            <i class="fa-solid fa-user-secret"></i>
+                        </span>
 
-        <span class="genre-claim-content">
-            <strong>Thriller</strong>
+                        <span class="genre-claim-content">
+                            <strong>Thriller</strong>
 
-            <span>
-                Fast-paced stories filled with tension and mystery.
-            </span>
-        </span>
+                            <span>
+                                Fast-paced stories filled with tension and mystery.
+                            </span>
+                        </span>
 
-        <span class="genre-claim-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
-        </span>
+                        <span class="genre-claim-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
 
-    </a>
+                    </a>
 
 
-    <!-- Sci-Fi -->
-<a href="#all-books"
-    class="genre-claim"
-    data-category="sci-fi">
+                    <!-- Sci-Fi -->
+                    <a href="#all-books" class="genre-claim" data-category="sci-fi">
 
-    <span class="genre-claim-number">05</span>
+                        <span class="genre-claim-number">05</span>
 
-    <span class="genre-claim-icon">
-        <i class="fa-solid fa-rocket"></i>
-    </span>
+                        <span class="genre-claim-icon">
+                            <i class="fa-solid fa-rocket"></i>
+                        </span>
 
-    <span class="genre-claim-content">
-        <strong>Sci-Fi</strong>
+                        <span class="genre-claim-content">
+                            <strong>Sci-Fi</strong>
 
-        <span>
-            Future worlds, technology and limitless possibilities.
-        </span>
-    </span>
+                            <span>
+                                Future worlds, technology and limitless possibilities.
+                            </span>
+                        </span>
 
-    <span class="genre-claim-arrow">
-        <i class="fa-solid fa-arrow-right"></i>
-    </span>
+                        <span class="genre-claim-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
 
-</a>
+                    </a>
 
-    <!-- Classics -->
-    <a href="#all-books"
-        class="genre-claim"
-        data-category="classics">
+                    <!-- Classics -->
+                    <a href="#all-books" class="genre-claim" data-category="classics">
 
-        <span class="genre-claim-number">06</span>
+                        <span class="genre-claim-number">06</span>
 
-        <span class="genre-claim-icon">
-            <i class="fa-solid fa-book-open"></i>
-        </span>
+                        <span class="genre-claim-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </span>
 
-        <span class="genre-claim-content">
-            <strong>Classics</strong>
+                        <span class="genre-claim-content">
+                            <strong>Classics</strong>
 
-            <span>
-                Timeless stories that continue to inspire generations.
-            </span>
-        </span>
+                            <span>
+                                Timeless stories that continue to inspire generations.
+                            </span>
+                        </span>
 
-        <span class="genre-claim-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
-        </span>
+                        <span class="genre-claim-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
 
-    </a>
+                    </a>
 
 
-    <!-- Business -->
-    <a href="#all-books"
-        class="genre-claim"
-        data-category="business">
+                    <!-- Business -->
+                    <a href="#all-books" class="genre-claim" data-category="business">
 
-        <span class="genre-claim-number">07</span>
+                        <span class="genre-claim-number">07</span>
 
-        <span class="genre-claim-icon">
-            <i class="fa-solid fa-briefcase"></i>
-        </span>
+                        <span class="genre-claim-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </span>
 
-        <span class="genre-claim-content">
-            <strong>Business</strong>
+                        <span class="genre-claim-content">
+                            <strong>Business</strong>
 
-            <span>
-                Leadership, entrepreneurship and professional growth.
-            </span>
-        </span>
+                            <span>
+                                Leadership, entrepreneurship and professional growth.
+                            </span>
+                        </span>
 
-        <span class="genre-claim-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
-        </span>
+                        <span class="genre-claim-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
 
-    </a>
+                    </a>
 
 
-    <!-- Self Development -->
-    <a href="#all-books"
-        class="genre-claim"
-        data-category="self-development">
+                    <!-- Self Development -->
+                    <a href="#all-books" class="genre-claim" data-category="self-development">
 
-        <span class="genre-claim-number">08</span>
+                        <span class="genre-claim-number">08</span>
 
-        <span class="genre-claim-icon">
-            <i class="fa-solid fa-seedling"></i>
-        </span>
+                        <span class="genre-claim-icon">
+                            <i class="fa-solid fa-seedling"></i>
+                        </span>
 
-        <span class="genre-claim-content">
-            <strong>Self Development</strong>
+                        <span class="genre-claim-content">
+                            <strong>Self Development</strong>
 
-            <span>
-                Books to help you grow, learn and become your best self.
-            </span>
-        </span>
+                            <span>
+                                Books to help you grow, learn and become your best self.
+                            </span>
+                        </span>
 
-        <span class="genre-claim-arrow">
-            <i class="fa-solid fa-arrow-right"></i>
-        </span>
+                        <span class="genre-claim-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
 
-    </a>
+                    </a>
 
-</div>
-    </div>
+                </div>
+            </div>
 
-</section>
+        </section>
 
         <!-- End Of Category Section -->
 
@@ -355,7 +347,7 @@
 
         <section class="all-books py-5" id="all-books">
 
-            <div class="container">
+            <div class="container-fluid">
 
                 <div class="section-heading text-center mb-5">
                     <span class="section-label">NOVELNEST COLLECTION</span>
@@ -1810,167 +1802,163 @@
                         </div>
                     </div>
                     <!-- Book 41 -->
-<div class="col-6 col-md-4 col-lg-3">
-    <div class="book-card" data-category="business">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="book-card" data-category="business">
 
-        <div class="book-image">
-            <img src="My Images/The Lean.png"
-                alt="The Lean Startup">
+                            <div class="book-image">
+                                <img src="My Images/The Lean.png" alt="The Lean Startup">
 
-            <span class="book-badge">BUSINESS</span>
+                                <span class="book-badge">BUSINESS</span>
 
-            <div class="book-overlay">
-                <a href="book.html?book=the-lean-startup" class="read-more">
-                    Read More <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
+                                <div class="book-overlay">
+                                    <a href="book.html?book=the-lean-startup" class="read-more">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
 
-        <div class="book-info">
+                            <div class="book-info">
 
-            <div class="book-tags">
-                <span>Business</span>
-                <span>Entrepreneurship</span>
-            </div>
+                                <div class="book-tags">
+                                    <span>Business</span>
+                                    <span>Entrepreneurship</span>
+                                </div>
 
-            <h3>The Lean Startup</h3>
+                                <h3>The Lean Startup</h3>
 
-            <p>
-                A practical guide to building businesses through continuous
-                innovation, experimentation and customer feedback.
-            </p>
+                                <p>
+                                    A practical guide to building businesses through continuous
+                                    innovation, experimentation and customer feedback.
+                                </p>
 
-        </div>
+                            </div>
 
-    </div>
-</div>
-
-
-<!-- Book 42 -->
-<div class="col-6 col-md-4 col-lg-3">
-    <div class="book-card" data-category="business">
-
-        <div class="book-image">
-            <img src="My Images/Good to be Great.png"
-                alt="Good to Great">
-
-            <span class="book-badge">BUSINESS</span>
-
-            <div class="book-overlay">
-                <a href="book.html?book=good-to-great" class="read-more">
-                    Read More <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="book-info">
-
-            <div class="book-tags">
-                <span>Business</span>
-                <span>Leadership</span>
-            </div>
-
-            <h3>Good to Great</h3>
-
-            <p>
-                Explores how companies move from ordinary performance to
-                sustained excellence through disciplined leadership and strategy.
-            </p>
-
-        </div>
-
-    </div>
-</div>
+                        </div>
+                    </div>
 
 
-<!-- Book 43 -->
-<div class="col-6 col-md-4 col-lg-3">
-    <div class="book-card" data-category="business">
+                    <!-- Book 42 -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="book-card" data-category="business">
 
-        <div class="book-image">
-            <img src="My Images/Psychology Of Money.png"
-                alt="The Psychology of Money">
+                            <div class="book-image">
+                                <img src="My Images/Good to be Great.png" alt="Good to Great">
 
-            <span class="book-badge">BUSINESS</span>
+                                <span class="book-badge">BUSINESS</span>
 
-            <div class="book-overlay">
-                <a href="book.html?book=the-psychology-of-money" class="read-more">
-                    Read More <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
+                                <div class="book-overlay">
+                                    <a href="book.html?book=good-to-great" class="read-more">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
 
-        <div class="book-info">
+                            <div class="book-info">
 
-            <div class="book-tags">
-                <span>Business</span>
-                <span>Finance</span>
-            </div>
+                                <div class="book-tags">
+                                    <span>Business</span>
+                                    <span>Leadership</span>
+                                </div>
 
-            <h3>The Psychology of Money</h3>
+                                <h3>Good to Great</h3>
 
-            <p>
-                Examines how emotions, behavior and personal experiences
-                influence the way people think about and manage money.
-            </p>
+                                <p>
+                                    Explores how companies move from ordinary performance to
+                                    sustained excellence through disciplined leadership and strategy.
+                                </p>
 
-        </div>
+                            </div>
 
-    </div>
-</div>
+                        </div>
+                    </div>
 
 
-<!-- Book 44 -->
-<div class="col-6 col-md-4 col-lg-3">
-    <div class="book-card" data-category="business">
+                    <!-- Book 43 -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="book-card" data-category="business">
 
-        <div class="book-image">
-            <img src="My Images/The 100.png"
-                alt="The $100 Startup">
+                            <div class="book-image">
+                                <img src="My Images/Psychology Of Money.png" alt="The Psychology of Money">
 
-            <span class="book-badge">BUSINESS</span>
+                                <span class="book-badge">BUSINESS</span>
 
-            <div class="book-overlay">
-                <a href="book.html?book=the-100-startup" class="read-more">
-                    Read More <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
+                                <div class="book-overlay">
+                                    <a href="book.html?book=the-psychology-of-money" class="read-more">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
 
-        <div class="book-info">
+                            <div class="book-info">
 
-            <div class="book-tags">
-                <span>Business</span>
-                <span>Entrepreneurship</span>
-            </div>
+                                <div class="book-tags">
+                                    <span>Business</span>
+                                    <span>Finance</span>
+                                </div>
 
-            <h3>The $100 Startup</h3>
+                                <h3>The Psychology of Money</h3>
 
-            <p>
-                Shows how people can turn their skills and ideas into
-                simple businesses with minimal startup investment.
-            </p>
+                                <p>
+                                    Examines how emotions, behavior and personal experiences
+                                    influence the way people think about and manage money.
+                                </p>
 
-        </div>
+                            </div>
 
-    </div>
-</div>
+                        </div>
+                    </div>
+
+
+                    <!-- Book 44 -->
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="book-card" data-category="business">
+
+                            <div class="book-image">
+                                <img src="My Images/The 100.png" alt="The $100 Startup">
+
+                                <span class="book-badge">BUSINESS</span>
+
+                                <div class="book-overlay">
+                                    <a href="book.html?book=the-100-startup" class="read-more">
+                                        Read More <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="book-info">
+
+                                <div class="book-tags">
+                                    <span>Business</span>
+                                    <span>Entrepreneurship</span>
+                                </div>
+
+                                <h3>The $100 Startup</h3>
+
+                                <p>
+                                    Shows how people can turn their skills and ideas into
+                                    simple businesses with minimal startup investment.
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Pagination -->
-<div class="library-pagination" id="libraryPagination">
+                <div class="library-pagination" id="libraryPagination">
 
-    <button type="button" id="prevPage" class="pagination-btn">
-        <i class="fa-solid fa-chevron-left"></i>
-    </button>
+                    <button type="button" id="prevPage" class="pagination-btn">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
 
-    <div id="pageNumbers" class="page-numbers"></div>
+                    <div id="pageNumbers" class="page-numbers"></div>
 
-    <button type="button" id="nextPage" class="pagination-btn">
-        <i class="fa-solid fa-chevron-right"></i>
-    </button>
+                    <button type="button" id="nextPage" class="pagination-btn">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
 
-</div>
+                </div>
 
             </div>
 
@@ -1982,7 +1970,7 @@
 
     <footer class="footer">
 
-        <div class="container">
+        <div class="container-fluid">
 
             <div class="row justify-content-between gx-5 gy-5">
 
@@ -2130,11 +2118,11 @@
 
 
 
-  <script src="js/bootstrap.bundle.js"></script>
-<script src="dist/aos.js"></script>
-<script src="My Js/pageloader.js"></script>
-<script src="My Js/style.js"></script>
-<script src="My Js/library.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="dist/aos.js"></script>
+    <script src="My Js/pageloader.js"></script>
+    <script src="My Js/style.js"></script>
+    <script src="My Js/library.js"></script>
 </body>
 
 </html>

@@ -29,17 +29,14 @@
     <!-- Progress-Bar or Scroll Progress -->
     <div class="progress-bar"></div>
 
-    <!-- Nav -->
-    <nav id="mainNav" class="navbar darkmode">
-
-        <div class="logo">
+ <nav class="auth-nav">
+        <a href="index.html" class="logo">
 
             <div class="logo-icon">
                 <i class="fa-solid fa-book-open"></i>
             </div>
 
             <div class="logo-text">
-
                 <h2>NovelNest</h2>
 
                 <div class="logo-subtitle">
@@ -49,59 +46,15 @@
 
             </div>
 
-        </div>
-
-
-        <button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
-
-            <span>Menu</span>
-
-            <i class="fa-solid fa-bars"></i>
-
-        </button>
-
-
-        <div class="nav-links">
-
-            <ul class="nav nav-pills">
-
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">
-                        Home
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Library
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
-
-
-            <a href="#" class="btn login-btn">
-                Login / Sign Up
-            </a>
-
-        </div>
-
+        </a>
 
         <div class="theme-toggle">
 
             <input type="checkbox" id="themeToggle">
 
             <label for="themeToggle" class="label">
-
                 <span class="sun">☀️</span>
                 <span class="moon">🌙</span>
-
             </label>
 
         </div>
@@ -988,7 +941,7 @@
 
     <footer class="footer">
 
-        <div class="container">
+        <div class="container-fluid">
 
             <div class="row justify-content-between gx-5 gy-5">
 
@@ -1232,9 +1185,11 @@
     </footer>
 
     <!-- Find The Book -->
-    <button id="find-book">
-        <i class="fa-solid fa-book"></i>
-        Read
+<button id="find-book">
+        <a href="library.html#all-books" class="back-to-books">
+        <i class="fas fa-arrow-left"></i>
+        Go To All Books
+    </a>
     </button>
 
     <!-- Scroll to the Top -->

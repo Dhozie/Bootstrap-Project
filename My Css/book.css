@@ -224,41 +224,50 @@ body {
 }
 
 /* Theme toggle */
-.auth-nav .theme-toggle {
+/* Theme Toggle */
+
+.theme-toggle {
     position: relative;
+
 }
 
-.auth-nav .theme-toggle input {
+.theme-toggle input {
     display: none;
 }
 
-.auth-nav .theme-toggle .label {
+.theme-toggle .label {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 80px;
     height: 48px;
     padding: 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     border-radius: 50px;
     cursor: pointer;
     background: var(--card-color);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow);
     transition: all .4s ease;
+
 }
 
-.auth-nav .sun,
-.auth-nav .moon {
+/* Emoji */
+
+.sun,
+.moon {
     font-size: .97rem;
     z-index: 3;
+    transition: opacity .35s ease;
+    opacity: 1;
 }
 
-/* Toggle knob */
-.auth-nav .theme-toggle .label::before {
+/* Knob */
+
+.theme-toggle .label::before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 49%;
     left: 7px;
     transform: translateY(-50%);
     width: 28px;
@@ -270,19 +279,51 @@ body {
     box-shadow: var(--shadow);
     transition: all .4s ease;
     z-index: 2;
+
 }
 
-.auth-nav .theme-toggle .label:hover {
-    transform: translateY(-2px);
+/* Hover */
+.theme-toggle .label:hover {
+    transform:
+        translateY(-2px);
 }
 
-/* Checked state */
-.auth-nav .theme-toggle input:checked+.label::before {
+/* Active */
+.theme-toggle input:checked+.label {
+    background: var(--surface-color);
+}
+
+.theme-toggle input:checked+.label::before {
     left: calc(100% - 32px);
+    background: linear-gradient(135deg,
+            var(--surface-color),
+            var(--border-color));
+
+}
+
+.theme-toggle input:checked+.label .sun {
+    opacity: .9;
+}
+
+.theme-toggle input:checked+.label .moon {
+    opacity: 1;
+}
+
+body.dark-mode .theme-toggle .label {
+    background: var(--card-color);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .theme-toggle input:checked+.label {
+    background: var(--accent-color);
+}
+
+body.dark-mode .theme-toggle .label::before {
     background: linear-gradient(135deg,
             var(--surface-color),
             var(--secondary-color));
 }
+
 
 /* Dark mode */
 body.dark-mode .auth-nav {
@@ -1132,19 +1173,50 @@ body.dark-mode .related-book-card {
     }
 
     .auth-nav .logo-text h2 {
-        font-size: 2rem;
+        font-size: 1.30rem
     }
 
     .auth-nav .logo-subtitle span {
-        font-size: .85rem;
+        font-size: .70rem;
     }
 
-    .auth-nav .theme-toggle .label {
-        width: 70px;
-        height: 42px;
-        padding: 0 8px;
-    }
+ .theme-toggle .label {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+}
 
+/* Hide sliding knob */
+.theme-toggle .label::before {
+    display: none;
+}
+
+/* Hide icons */
+.theme-toggle .sun,
+.theme-toggle .moon {
+    display: none;
+    font-size: 1.1rem;
+}
+
+/* Show current theme */
+.theme-toggle input:not(:checked) + .label .moon {
+    display: block;
+}
+
+.theme-toggle input:checked + .label .sun {
+    display: block;
+}
+
+/* Remove hover movement */
+.theme-toggle .label:hover {
+    transform: none;
+}
 
     /* Book Page */
 
@@ -1210,7 +1282,7 @@ body.dark-mode .related-book-card {
     /* Book Cover */
 
     .book-cover {
-        bottom: -180px;
+        bottom: -220px;
     }
 
     .book-cover img {
@@ -1218,7 +1290,6 @@ body.dark-mode .related-book-card {
         max-width: 75vw;
         border-radius: 10px;
     }
-
 
     /* Rating Section */
 
