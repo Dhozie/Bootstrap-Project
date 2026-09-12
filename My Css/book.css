@@ -542,45 +542,76 @@ body.dark-mode .book-hero {
 
 /* Buttons */
 
-.book-actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.book-actions a {
+/* All buttons */
+.book-actions a,
+.wishlist-btn,
+.cart-btn {
     width: 15rem;
-    padding: .9rem 1.8rem;
+    height: 60px;
+    padding: .9rem 1rem;
+
     border-radius: 50px;
+
     font-family: Thunky;
     font-size: 1.5rem;
     font-weight: 100;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
+
     cursor: pointer;
     transition: .3s ease;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    white-space: nowrap;
 }
 
+/* Buy */
 .buy-btn {
     border: 1px solid var(--accent-color);
     background: var(--accent-color);
     color: var(--bg-color);
 }
 
+/* Cart */
 .cart-btn {
     border: 1px solid var(--border-color);
-    background: var(--card-color);
+    background: var(--heading-color);
+    color: var(--accent-color);
+}
+.cart-btn:hover{
+    background: transparent;
     color: var(--heading-color);
 }
 
-.buy-btn,
-.cart-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+/* Wishlist */
+.wishlist-btn {
+    border: 1px solid var(--accent-color);
+    background: transparent;
+    color: var(--heading-color);
 }
+
+.wishlist-btn i {
+    margin-right: .5rem;
+}
+
+.wishlist-btn:hover {
+    background: var(--accent-color);
+    color: var(--surface-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(194, 138, 46, .25);
+}
+
+.wishlist-btn.active {
+    background: var(--accent-color);
+    color: var(--surface-color);
+}
+
+.wishlist-btn.active i {
+    font-weight: 900;
+}
+
 
 .book-actions a:hover {
     background: var(--primary-color);
@@ -1333,17 +1364,23 @@ body.dark-mode .related-book-card {
 
     /* Buttons */
 
-    .book-actions {
+     .book-actions {
+        display: flex;
         flex-direction: column;
-        gap: .8rem;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
         width: 100%;
     }
 
-    .book-actions a {
-        width: min(15rem, 90%);
-        padding: .8rem 1.2rem;
+    .book-actions a,
+    .wishlist-btn {
+        width: 15rem;
+        height: 55px;
+        padding: .8rem 1rem;
         font-size: 1.2rem;
         letter-spacing: 2px;
+        white-space: nowrap;
     }
 
 

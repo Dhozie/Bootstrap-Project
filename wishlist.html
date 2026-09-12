@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="My Css/wishlist.css">
+    <link rel="stylesheet" href="dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+
+<body>
+    <div class="progress-bar"></div>
+
+    <!-- Nav -->
+    <nav id="mainNav" class="navbar darkmode">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="logo-text">
+                <h2>NovelNest</h2>
+
+                <div class="logo-subtitle">
+                    <span>Book</span>
+                    <span>Club</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                     <a class="nav-link" href="library.html">Library</a>
+                </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+
+            <a href="reg.html" class="btn login-btn">
+                Login / Sign Up
+            </a>
+        </div>
+
+        <div class="navbar-actions">
+
+            <!-- Wishlist -->
+<a href="wishlist.html" class="nav-action">
+    <i class="fa-regular fa-heart"></i>
+</a>
+
+<!-- Cart -->
+<a href="cart.html" class="nav-action">
+    <i class="fa-solid fa-cart-shopping"></i>
+</a>
+
+            <!-- Theme button -->
+            <div class="theme-toggle">
+                <input type="checkbox" id="themeToggle">
+
+                <label for="themeToggle" class="label">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </label>
+            </div>
+
+
+            <!-- Hamburger -->
+            <button class="menu-btn" type="button">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+    </nav>
+    <!-- End Of Nav -->
+
+    <!-- Wishlist Hero -->
+
+<section class="wishlist-hero">
+
+    <!-- Background Video -->
+    <video class="wishlist-hero-video" autoplay muted loop playsinline>
+        <source src="My Videos/WishList.mp4" type="video/mp4">
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="wishlist-hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="wishlist-hero-content">
+
+        <span>MY COLLECTION</span>
+
+        <h1>My Wishlist</h1>
+
+        <p>
+           Your saved books, all in one place. Keep Tracks of the Books you are excited about
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Wishlist Books -->
+
+<section class="wishlist-books">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+        <div class="wishlist-heading">
+
+            <span>YOUR SAVED STORIES</span>
+
+            <h2>Books You Love</h2>
+
+            <p>
+                A collection of stories waiting for you.
+            </p>
+
+        </div>
+
+        <!-- Books will be added by JavaScript -->
+        <div class="row g-4 wishlist-grid" id="wishlistBooks">
+
+            <!-- Wishlist books appear here -->
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Wishlist Empty State -->
+
+<section class="wishlist-empty" id="wishlistEmpty">
+
+    <div class="wishlist-empty-content">
+
+        <div class="wishlist-empty-icon">
+            <i class="fa-regular fa-heart"></i>
+        </div>
+
+        <span>NOTHING SAVED YET</span>
+
+        <h2>Your Wishlist is Empty</h2>
+
+        <p>
+            Your favorite stories belong here.
+            Explore our library and save the books
+            you can't wait to read.
+        </p>
+
+        <a href="library.html" class="wishlist-browse-btn">
+            <i class="fa-solid fa-book-open"></i>
+            Browse Books
+        </a>
+
+    </div>
+
+</section>
+
+
+
+    <!-- Scroll to the Top  -->
+    <button id="scroll-top">
+        ⬆
+    </button>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="dist/aos.js"></script>
+    <script src="My Js/wishlist.js"></script>
+    <script src="My Js/style.js"></script>
+
+
+</body>
+</html>

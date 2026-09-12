@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="My Css/profile.css">
+    <link rel="stylesheet" href="dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="progress-bar"></div>
+
+    <!-- Nav -->
+    <nav id="mainNav" class="navbar darkmode">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="logo-text">
+                <h2>NovelNest</h2>
+
+                <div class="logo-subtitle">
+                    <span>Book</span>
+                    <span>Club</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                     <a class="nav-link" href="library.html">Library</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="wishlist.html">Wishlist</a>
+                </li>
+            </ul>
+
+            <a href="reg.html" class="btn login-btn">
+                Login / Sign Up
+            </a>
+        </div>
+
+        <div class="navbar-actions">
+
+            <!-- Wishlist -->
+<a href="wishlist.html" class="nav-action">
+    <i class="fa-regular fa-heart"></i>
+</a>
+
+<!-- Cart -->
+<a href="cart.html" class="nav-action">
+    <i class="fa-solid fa-cart-shopping"></i>
+</a>
+            <!-- Theme button -->
+            <div class="theme-toggle">
+                <input type="checkbox" id="themeToggle">
+
+                <label for="themeToggle" class="label">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </label>
+            </div>
+
+
+            <!-- Hamburger -->
+            <button class="menu-btn" type="button">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+    </nav>
+    <!-- End Of Nav -->
+
+    <!-- Hero Section -->
+
+    <section class="profile-hero">
+
+        <div class="container-fluid">
+
+            <div class="row align-items-center">
+
+                <!-- LEFT: PROFILE -->
+                <div class="col-lg-5 profile-info">
+
+                    <!-- Profile Icon -->
+                    <div class="profile-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <h1 id="profileName"></h1>
+
+                    <p id="profileEmail"></p>
+
+                    <p class="profile-quote">
+                        "A reader lives a thousand lives before he dies.
+                        The man who never reads lives only one."
+                    </p>
+
+                    <div class="profile-actions">
+
+                        <a href="#" class="btn edit-profile-btn">
+                            Edit Profile
+                        </a>
+
+                        <a href="library.html" class="btn profile-btn">
+                            View My Library
+                        </a>
+
+                    </div>
+
+                </div>
+                <!-- RIGHT: BOOK FAN -->
+                <div class="col-lg-7 profile-book-collage">
+
+                    <div class="book-stack">
+
+                        <!-- BOOK 1 -->
+                        <a href="book.html?book=children-d" class="stack-book stack-book-1">
+
+                            <img src="My Images/children d.png" alt="Children D">
+
+                            <span class="book-hover-link">
+                                Explore Book
+                            </span>
+
+                        </a>
+
+
+                        <!-- BOOK 2 -->
+                        <a href="book.html?book=Dracula" class="stack-book stack-book-2">
+
+                            <img src="My Images/Dracula.png" alt="Dracula">
+
+                            <span class="book-hover-link">
+                                Explore Book
+                            </span>
+
+                        </a>
+
+
+                        <!-- BOOK 3 -->
+                        <a href="book.html?book=Curse-Breaker" class="stack-book stack-book-3">
+
+                            <img src="My Images/Curse Breaker.jpeg" alt="Curse Breaker">
+
+                            <span class="book-hover-link">
+                                Explore Book
+                            </span>
+
+                        </a>
+
+
+                        <!-- BOOK 4 -->
+                        <a href="book.html?book=The-Name-of-the-Wind" class="stack-book stack-book-4">
+
+                            <img src="My Images/the name of the wind.png" alt="The Name of the Wind">
+
+                            <span class="book-hover-link">
+                                Explore Book
+                            </span>
+
+                        </a>
+
+
+                        <!-- BOOK 5 -->
+                        <a href="book.html?book=The-100-Startup" class="stack-book stack-book-5">
+
+                            <img src="My Images/The 100.png" alt="The $100 Startup">
+
+                            <span class="book-hover-link">
+                                Explore Book
+                            </span>
+
+                        </a>
+
+
+                        <!-- BOOK 6 -->
+                        <a href="book.html?book=Verity" class="stack-book stack-book-6">
+
+                            <img src="My Images/Verity-removebg-preview.png" alt="Verity">
+
+                            <span class="book-hover-link">
+                                Explore Book
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- Reading Dashboard -->
+
+<section class="profile-dashboard">
+
+    <div class="container-fluid">
+
+        <!-- Section Heading -->
+        <div class="dashboard-heading">
+            <span>MY READING SPACE</span>
+            <h2>My Book Collection</h2>
+            <p>Keep track of my reading journey.</p>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="row g-4">
+
+            <!-- Books Read -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="#" class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        📚
+                    </div>
+
+                    <div class="dashboard-content">
+                        <h3>Books Read</h3>
+                        <span>0 Books</span>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right dashboard-arrow"></i>
+
+                </a>
+            </div>
+
+
+            <!-- Wishlist -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="#" class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        ❤️
+                    </div>
+
+                    <div class="dashboard-content">
+                        <h3>Wishlist</h3>
+                        <span>0 Books</span>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right dashboard-arrow"></i>
+
+                </a>
+            </div>
+
+
+            <!-- Reading List -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="#" class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        🔖
+                    </div>
+
+                    <div class="dashboard-content">
+                        <h3>Reading List</h3>
+                        <span>0 Books</span>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right dashboard-arrow"></i>
+
+                </a>
+            </div>
+
+
+            <!-- Cart -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="#" class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        🛒
+                    </div>
+
+                    <div class="dashboard-content">
+                        <h3>Cart</h3>
+                        <span>0 Items</span>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right dashboard-arrow"></i>
+
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- My Library -->
+
+<section class="my-library">
+
+    <div class="container-fluid">
+
+        <!-- Library Heading -->
+        <div class="library-heading">
+
+            <span>MY COLLECTION</span>
+
+            <h2>My Library</h2>
+
+            <p>
+                "Every book you read adds another chapter to the
+                story of who you are."
+            </p>
+
+        </div>
+
+
+        <!-- Library Filters -->
+
+        <div class="library-filters">
+
+            <button class="library-filter active" data-filter="all">
+                <i class="fa-solid fa-book"></i>
+                <span>All</span>
+            </button>
+
+            <button class="library-filter" data-filter="reading">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Currently Reading</span>
+            </button>
+
+            <button class="library-filter" data-filter="completed">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Completed</span>
+            </button>
+
+            <button class="library-filter" data-filter="saved">
+                <i class="fa-solid fa-bookmark"></i>
+                <span>Saved</span>
+            </button>
+
+        </div>
+
+
+        <!-- Books will appear here -->
+
+        <div class="row g-4 my-library-books" id="myLibraryBooks">
+
+            <!-- JavaScript will display books here -->
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+    <!-- Scroll to the Top  -->
+    <button id="scroll-top">
+        ⬆
+    </button>
+
+    <button id="logoutBtn">
+
+    <span class="logout-icon">
+        <i class="fa-solid fa-right-from-bracket"></i>
+    </span>
+
+    <span class="logout-text">
+        Logout
+    </span>
+
+</button>
+
+
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="dist/aos.js"></script>
+    <script src="My Js/style.js"></script>
+
+</body>
+
+</html>

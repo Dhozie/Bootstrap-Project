@@ -246,7 +246,7 @@
                         </label>
 
                         <input type="text" id="signupName" name="signupName" placeholder="Enter your full name"
-                            autocomplete="name" required>
+                            autocomplete="name">
 
                     </div>
 
@@ -385,29 +385,6 @@
 
     <script src="My Js/style.js"></script>
     <script src="My Js/auth.js"></script>
-
-    <script>
-        (function () {
-            const btn = document.querySelector('.back-home-btn');
-            const imgSection = document.querySelector('.auth-image-section');
-            const container = document.querySelector('.auth-container');
-            function moveBtn() {
-                if (!btn || !imgSection || !container) return;
-                if (window.innerWidth <= 767) {
-                    if (!container.contains(btn)) container.appendChild(btn);
-                    imgSection.style.display = 'none';
-                } else {
-                    const imageContent = imgSection.querySelector('.auth-image-content') || imgSection;
-                    if (!imageContent.contains(btn)) imageContent.appendChild(btn);
-                    imgSection.style.display = '';
-                }
-            }
-            window.addEventListener('DOMContentLoaded', moveBtn);
-            window.addEventListener('resize', moveBtn);
-        })();
-    </script>
-
-
 
 </body>
 

@@ -636,3 +636,59 @@ if (browseBooks.length > 0) {
     updateBrowsePagination();
 
 }
+
+// Current User
+
+const currentUser = JSON.parse(
+    localStorage.getItem("currentUser")
+);
+
+console.log("Current User:", currentUser);
+
+const loginButton = document.querySelector(".login-btn");
+
+if (loginButton && currentUser) {
+    loginButton.textContent = `👤 ${currentUser.name}`;
+    loginButton.href = "profile.html";
+    
+}
+
+const profileName = document.getElementById("profileName");
+const profileEmail = document.getElementById("profileEmail");
+
+if (profileName && currentUser) {
+    profileName.textContent = currentUser.name;
+}
+
+if (profileEmail && currentUser) {
+    profileEmail.textContent = currentUser.email;
+}
+
+// Logout
+
+function logoutUser() {
+    localStorage.removeItem("currentUser");
+    window.location.href = "reg.html";
+}
+
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", logoutUser);
+}
+
+window.addEventListener("scroll", () => {
+
+    if (!logoutBtn) return;
+
+    if (window.scrollY > 300) {
+
+        logoutBtn.classList.add("show");
+
+    } else {
+
+        logoutBtn.classList.remove("show");
+
+    }
+
+});

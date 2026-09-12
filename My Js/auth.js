@@ -1,4 +1,4 @@
-// START LOGIN / SIGN UP
+// LOGIN / SIGN UP
 
 const loginTab =
     document.getElementById("loginTab");
@@ -9,6 +9,37 @@ const signupTab =
 
 const loginForm =
     document.getElementById("loginForm");
+
+if (loginForm) {
+
+    loginForm.addEventListener("submit", function (event) {
+
+        // Stop the form from refreshing the page
+        event.preventDefault();
+
+        // Get values from the login form
+      const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+const password = document.getElementById("loginPassword").value;
+
+        const savedUser = JSON.parse(localStorage.getItem("user"));
+        
+        if (email !== savedUser.email || password !== savedUser.password) {
+    alert("Invalid email or password.");
+    return;
+        }
+        
+        localStorage.setItem("currentUser", JSON.stringify(savedUser));
+        window.location.href = "index.html";
+
+        console.log("Saved User:", savedUser);
+        
+
+        console.log("Login Email:", email);
+        console.log("Login Password:", password);
+
+    });
+
+}
 
 const signupForm =
     document.getElementById("signupForm");
@@ -25,7 +56,7 @@ const authImage =
     document.getElementById("authImage");
 
 
-// START SWITCH FORM
+// SWITCH FORM
 
 function switchForm(type) {
 
@@ -71,10 +102,8 @@ function switchForm(type) {
 
 }
 
-// END SWITCH FORM
 
-
-// START LOGIN TAB
+// LOGIN TAB
 
 if (loginTab) {
 
@@ -85,10 +114,8 @@ if (loginTab) {
 
 }
 
-// END LOGIN TAB
 
-
-// START SIGN UP TAB
+// SIGN UP TAB
 
 if (signupTab) {
 
@@ -99,10 +126,8 @@ if (signupTab) {
 
 }
 
-// END SIGN UP TAB
 
-
-// START GO TO SIGN UP
+// GO TO SIGN UP
 
 if (goToSignup) {
 
@@ -113,10 +138,8 @@ if (goToSignup) {
 
 }
 
-// END GO TO SIGN UP
 
-
-// START GO TO LOGIN
+// GO TO LOGIN
 
 if (goToLogin) {
 
@@ -127,7 +150,184 @@ if (goToLogin) {
 
 }
 
-// END GO TO LOGIN
+
+// PASSWORD TOGGLE
+
+const passwordToggles =
+    document.querySelectorAll(".password-toggle");
 
 
-// END LOGIN / SIGN UP
+passwordToggles.forEach(toggle => {
+
+    toggle.addEventListener("click", () => {
+
+        const targetId =
+            toggle.getAttribute("data-target");
+
+        const passwordInput =
+            document.getElementById(targetId);
+
+        const icon =
+            toggle.querySelector("i");
+
+
+        if (!passwordInput || !icon) return;
+
+
+        const isPassword =
+            passwordInput.type === "password";
+
+
+        passwordInput.type =
+            isPassword
+                ? "text"
+                : "password";
+
+
+        icon.classList.toggle(
+            "fa-eye",
+            !isPassword
+        );
+
+        icon.classList.toggle(
+            "fa-eye-slash",
+            isPassword
+        );
+
+
+        toggle.setAttribute(
+            "aria-label",
+            isPassword
+                ? "Hide password"
+                : "Show password"
+        );
+
+    });
+
+});
+
+
+// BACK HOME BUTTON
+
+const backHomeBtn =
+    document.querySelector(".back-home-btn");
+
+const authImageSection =
+    document.querySelector(".auth-image-section");
+
+const authContainer =
+    document.querySelector(".auth-container");
+
+
+function moveBackHomeBtn() {
+
+    if (
+        !backHomeBtn ||
+        !authImageSection ||
+        !authContainer
+    ) return;
+
+
+    if (window.innerWidth <= 767) {
+
+        if (!authContainer.contains(backHomeBtn)) {
+
+            authContainer.appendChild(
+                backHomeBtn
+            );
+
+        }
+
+        authImageSection.style.display =
+            "none";
+
+    } else {
+
+        const imageContent =
+            authImageSection.querySelector(
+                ".auth-image-content"
+            ) || authImageSection;
+
+
+        if (!imageContent.contains(backHomeBtn)) {
+
+            imageContent.appendChild(
+                backHomeBtn
+            );
+
+        }
+
+        authImageSection.style.display =
+            "";
+
+    }
+
+}
+
+
+window.addEventListener(
+    "DOMContentLoaded",
+    moveBackHomeBtn
+);
+
+
+window.addEventListener(
+    "resize",
+    moveBackHomeBtn
+);
+
+
+// USER SIGN UP
+
+if (signupForm) {
+
+    signupForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("signupName").value.trim();
+
+        const email = document
+          .getElementById("signupEmail")
+          .value.trim()
+          .toLowerCase();
+
+        const password = document.getElementById("signupPassword").value;
+
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+        if (name === "") {
+          alert("Please enter your name.");
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match.");
+          return;
+        }
+
+       const user = {
+    name: name,
+    email: email,
+    password: password
+};
+
+console.log(user);
+
+        localStorage.setItem("user", JSON.stringify(user));
+
+        localStorage.setItem("currentUser", JSON.stringify(user));
+
+        
+
+
+        console.log("Name:", name);
+        console.log("Email:", email);
+        console.log("Password:", password);
+        console.log("Confirm Password:", confirmPassword);
+
+    });
+
+}

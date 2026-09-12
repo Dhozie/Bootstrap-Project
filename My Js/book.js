@@ -3872,8 +3872,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const book =
         books[bookName];
-    console.log("URL:", bookName);
-console.log("BOOK:", book);
 
     if (!book) {
 
@@ -3885,6 +3883,155 @@ console.log("BOOK:", book);
         return;
 
     }
+
+
+// Wishlist
+    const wishlistBtn =
+        document.getElementById("wishlistBtn");
+
+    if (wishlistBtn) {
+
+        // Check if book is already wishlisted
+        let wishlist =
+            JSON.parse(localStorage.getItem("wishlist")) || [];
+
+        const isWishlisted =
+            wishlist.some(item => item.bookName === bookName);
+
+        // Update button state if already wishlisted
+        if (isWishlisted) {
+
+            wishlistBtn.classList.add("active");
+
+            wishlistBtn.innerHTML = `
+                <i class="fa-solid fa-heart"></i>
+                Added to Wishlist
+            `;
+
+        }
+
+        // Handle wishlist button click
+        wishlistBtn.addEventListener("click", function () {
+
+            let wishlist =
+                JSON.parse(localStorage.getItem("wishlist")) || [];
+
+            const existingIndex =
+                wishlist.findIndex(
+                    item => item.bookName === bookName
+                );
+
+            // Remove from wishlist if already added
+            if (existingIndex !== -1) {
+
+                wishlist.splice(existingIndex, 1);
+
+                localStorage.setItem(
+                    "wishlist",
+                    JSON.stringify(wishlist)
+                );
+
+                wishlistBtn.classList.remove("active");
+
+                wishlistBtn.innerHTML = `
+                    <i class="fa-regular fa-heart"></i>
+                    Add to Wishlist
+                `;
+
+            }
+            // Add to wishlist
+            else {
+
+                wishlist.push({
+
+                    bookName: bookName,
+                    title: book.title,
+                    author: book.author,
+                    cover: book.cover,
+                    price: book.price
+
+                });
+
+                localStorage.setItem(
+                    "wishlist",
+                    JSON.stringify(wishlist)
+                );
+
+                wishlistBtn.classList.add("active");
+
+                wishlistBtn.innerHTML = `
+                    <i class="fa-solid fa-heart"></i>
+                    Added to Wishlist
+                `;
+
+            }
+
+        });
+
+    }
+
+    // ========================================
+// ADD TO CART
+// ========================================
+
+const addToCartBtn =
+    document.getElementById("addToCartBtn");
+
+if (addToCartBtn) {
+
+    addToCartBtn.addEventListener("click", function () {
+
+        // Get current cart
+        let cart =
+            JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Check if this book is already in the cart
+        const existingBook =
+            cart.find(item => item.bookName === bookName);
+
+        if (existingBook) {
+
+            // Increase quantity
+            existingBook.quantity += 1;
+
+        } else {
+
+            // Add new book
+            cart.push({
+                bookName: bookName,
+                title: book.title,
+                author: book.author,
+                cover: book.cover,
+                price: book.price,
+                quantity: 1
+            });
+
+        }
+
+        // Save updated cart
+        localStorage.setItem(
+            "cart",
+            JSON.stringify(cart)
+        );
+
+        // Change button temporarily
+        addToCartBtn.innerHTML = `
+            <i class="fa-solid fa-check"></i>
+            Added to Cart
+        `;
+
+        // Change it back
+        setTimeout(function () {
+
+            addToCartBtn.innerHTML = `
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add to Cart
+            `;
+
+        }, 1500);
+
+    });
+}
 
 
     // Hero

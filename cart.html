@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="My Css/cart.css">
+    <link rel="stylesheet" href="dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+
+<body>
+    <div class="progress-bar"></div>
+
+    <!-- Nav -->
+    <nav id="mainNav" class="navbar darkmode">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="logo-text">
+                <h2>NovelNest</h2>
+
+                <div class="logo-subtitle">
+                    <span>Book</span>
+                    <span>Club</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                     <a class="nav-link" href="library.html">Library</a>
+                </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+
+            <a href="reg.html" class="btn login-btn">
+                Login / Sign Up
+            </a>
+        </div>
+
+        <div class="navbar-actions">
+
+             <!-- Wishlist -->
+<a href="wishlist.html" class="nav-action">
+    <i class="fa-regular fa-heart"></i>
+</a>
+
+<!-- Cart -->
+<a href="cart.html" class="nav-action">
+    <i class="fa-solid fa-cart-shopping"></i>
+</a>
+            <!-- Theme button -->
+            <div class="theme-toggle">
+                <input type="checkbox" id="themeToggle">
+
+                <label for="themeToggle" class="label">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </label>
+            </div>
+
+
+            <!-- Hamburger -->
+            <button class="menu-btn" type="button">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+    </nav>
+    <!-- End Of Nav -->
+
+    <!-- Cart Hero -->
+
+<section class="cart-hero">
+
+    <!-- Dark Overlay -->
+    <div class="cart-hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="cart-hero-content">
+
+        <span>YOUR CART</span>
+
+        <h1>Your Selected Books</h1>
+
+        <p>
+         Your next Great read is just a click away. Review your items and proceed to checkout when you are ready.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Cart Section -->
+<section class="cart-section">
+
+    <div class="container">
+
+        <div class="cart-content">
+
+            <!-- Left Side -->
+            <div class="cart-selection">
+
+                <div class="cart-heading">
+                    <span>YOUR SELECTED STORIES</span>
+
+                    <h2>Your Cart</h2>
+
+                    <p>
+                        Review your selected books before continuing.
+                    </p>
+                </div>
+
+                <div id="cartItems">
+                    <!-- Cart books will be inserted here -->
+                </div>
+
+            </div>
+
+
+            <!-- Right Side -->
+            <div class="cart-calculation">
+
+    <h3>Order Summary</h3>
+
+    <div id="cartSummary">
+
+        <div class="cart-subtotal">
+            <span>Subtotal</span>
+            <strong id="cartSubtotal">₦0</strong>
+        </div>
+
+        <div class="cart-total">
+            <span>Total</span>
+            <strong id="cartTotal">₦0</strong>
+        </div>
+
+        <a href="checkout.html" class="checkout-btn">
+            Proceed to Checkout
+        </a>
+
+    </div>
+
+</div>
+
+        </div>
+
+        
+<!-- Empty Cart -->
+<div id="cartEmpty" class="cart-empty">
+
+    <div class="cart-empty-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+
+    <h2>Your Cart is Empty</h2>
+
+    <p>
+        Looks like you haven't added any books yet.
+        Discover a story and start your next chapter.
+    </p>
+
+    <a href="library.html" class="cart-empty-btn">
+        Browse Books
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+
+
+    </div>
+
+</section>
+
+
+    <!-- Scroll to the Top  -->
+    <button id="scroll-top">
+        ⬆
+    </button>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="dist/aos.js"></script>
+    <script src="My Js/cart.js"></script>
+    <script src="My Js/style.js"></script>
+
+</body>
+</html>

@@ -350,6 +350,49 @@ body.dark-mode .nav-link {
     border-color: var(--primary-color);
 }
 
+/* Navbar Actions */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+/* Wishlist & Cart */
+
+.nav-action {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--surface-color);
+    text-decoration: none;
+
+    font-size: 1.15rem;
+
+    transition: .3s ease;
+}
+
+body.dark-mode .nav-action {
+    color: var(--heading-color);
+}
+
+.navbar.scroll .nav-action {
+    color: var(--heading-color);
+}
+
+.nav-action:hover {
+    background: var(--accent-color);
+    color: var(--surface-color) !important;
+
+    transform: translateY(-2px);
+}
+
 /* Theme Toggle */
 
 .theme-toggle {
@@ -1335,7 +1378,7 @@ body.dark-mode .genre-claim-content span {
     left: 0;
     width: 100%;
     height: 70px;
-    padding: 0 .8rem;
+    padding: 0 .5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1392,6 +1435,15 @@ body.dark-mode .genre-claim-content span {
         background .25s ease;
 }
 
+body.dark-mode .menu-btn {
+    background: linear-gradient(
+        135deg,
+        var(--secondary-color),
+        var(--accent-color)
+    );
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
+}
+
 /* Hamburger icon */
 .menu-btn i {
     font-size: 1rem;
@@ -1404,24 +1456,35 @@ body.dark-mode .genre-claim-content span {
     transform: translateY(-2px);
 }
 
-/* Active */
-
-.menu-btn.active {
-    transform: translateY(-1px) scale(1.02);
-    background: linear-gradient(
-        135deg,
-        var(--accent-color),
-        var(--primary-color)
-    );
-
-    color: var(--surface-color);
-}
 
 
 /* Rotate hamburger */
 
 .menu-btn.active i {
     transform: rotate(90deg);
+}
+
+/* Wishlist & Cart */
+
+.nav-action {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+
+/* Keep them aligned */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: .1rem;
 }
 
 .theme-toggle .label {
