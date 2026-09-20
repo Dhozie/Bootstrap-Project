@@ -6,44 +6,11 @@ const loginTab =
 const signupTab =
     document.getElementById("signupTab");
 
-
 const loginForm =
     document.getElementById("loginForm");
 
-if (loginForm) {
-
-    loginForm.addEventListener("submit", function (event) {
-
-        // Stop the form from refreshing the page
-        event.preventDefault();
-
-        // Get values from the login form
-      const email = document.getElementById("loginEmail").value.trim().toLowerCase();
-const password = document.getElementById("loginPassword").value;
-
-        const savedUser = JSON.parse(localStorage.getItem("user"));
-        
-        if (email !== savedUser.email || password !== savedUser.password) {
-    alert("Invalid email or password.");
-    return;
-        }
-        
-        localStorage.setItem("currentUser", JSON.stringify(savedUser));
-        window.location.href = "index.html";
-
-        console.log("Saved User:", savedUser);
-        
-
-        console.log("Login Email:", email);
-        console.log("Login Password:", password);
-
-    });
-
-}
-
 const signupForm =
     document.getElementById("signupForm");
-
 
 const goToSignup =
     document.getElementById("goToSignup");
@@ -51,9 +18,82 @@ const goToSignup =
 const goToLogin =
     document.getElementById("goToLogin");
 
-
 const authImage =
     document.getElementById("authImage");
+
+
+// ACCOUNT CREATED MODAL
+
+const accountCreatedModalElement =
+    document.getElementById("accountCreatedModal");
+
+const accountCreatedModal =
+    accountCreatedModalElement
+        ? new bootstrap.Modal(accountCreatedModalElement)
+        : null;
+
+
+// LOGIN
+
+if (loginForm) {
+
+    loginForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const email =
+            document.getElementById("loginEmail")
+                .value.trim()
+                .toLowerCase();
+
+        const password =
+            document.getElementById("loginPassword").value;
+
+        const savedUser =
+            JSON.parse(localStorage.getItem("user"));
+
+        if (!savedUser) {
+
+            alert("No account found. Please create an account.");
+
+            return;
+        }
+
+        if (
+            email !== savedUser.email ||
+            password !== savedUser.password
+        ) {
+
+            alert("Invalid email or password.");
+
+            return;
+        }
+
+        localStorage.setItem(
+    "currentUser",
+    JSON.stringify(savedUser)
+);
+
+const loginSuccessModalElement =
+    document.getElementById("loginSuccessModal");
+
+const loginSuccessModal =
+    new bootstrap.Modal(loginSuccessModalElement);
+
+document.getElementById("welcomeUserName").textContent =
+    savedUser.name;
+
+loginSuccessModal.show();
+
+setTimeout(function () {
+
+    window.location.href = "index.html";
+
+}, 1800);
+        
+    });
+
+}
 
 
 // SWITCH FORM
@@ -68,10 +108,8 @@ function switchForm(type) {
         !authImage
     ) return;
 
-
     const isLogin =
         type === "login";
-
 
     loginTab.classList.toggle(
         "active",
@@ -83,7 +121,6 @@ function switchForm(type) {
         !isLogin
     );
 
-
     loginForm.classList.toggle(
         "hidden",
         !isLogin
@@ -94,11 +131,10 @@ function switchForm(type) {
         isLogin
     );
 
-
     authImage.src =
         isLogin
-            ? "../My Images/Login.jfif"
-            : "../My Images/Signup.jfif";
+            ? "My Images/Login.jfif"
+            : "My Images/Signup.jfif";
 
 }
 
@@ -156,7 +192,6 @@ if (goToLogin) {
 const passwordToggles =
     document.querySelectorAll(".password-toggle");
 
-
 passwordToggles.forEach(toggle => {
 
     toggle.addEventListener("click", () => {
@@ -170,19 +205,15 @@ passwordToggles.forEach(toggle => {
         const icon =
             toggle.querySelector("i");
 
-
         if (!passwordInput || !icon) return;
-
 
         const isPassword =
             passwordInput.type === "password";
-
 
         passwordInput.type =
             isPassword
                 ? "text"
                 : "password";
-
 
         icon.classList.toggle(
             "fa-eye",
@@ -193,7 +224,6 @@ passwordToggles.forEach(toggle => {
             "fa-eye-slash",
             isPassword
         );
-
 
         toggle.setAttribute(
             "aria-label",
@@ -227,7 +257,6 @@ function moveBackHomeBtn() {
         !authContainer
     ) return;
 
-
     if (window.innerWidth <= 767) {
 
         if (!authContainer.contains(backHomeBtn)) {
@@ -247,7 +276,6 @@ function moveBackHomeBtn() {
             authImageSection.querySelector(
                 ".auth-image-content"
             ) || authImageSection;
-
 
         if (!imageContent.contains(backHomeBtn)) {
 
@@ -270,7 +298,6 @@ window.addEventListener(
     moveBackHomeBtn
 );
 
-
 window.addEventListener(
     "resize",
     moveBackHomeBtn
@@ -285,49 +312,92 @@ if (signupForm) {
 
         event.preventDefault();
 
-
         const name =
-            document.getElementById("signupName").value.trim();
+            document.getElementById("signupName")
+                .value.trim();
 
-        const email = document
-          .getElementById("signupEmail")
-          .value.trim()
-          .toLowerCase();
+        const email =
+            document.getElementById("signupEmail")
+                .value.trim()
+                .toLowerCase();
 
-        const password = document.getElementById("signupPassword").value;
+        const password =
+            document.getElementById("signupPassword")
+                .value;
 
         const confirmPassword =
-          document.getElementById("confirmPassword").value;
+            document.getElementById("confirmPassword")
+                .value;
+
+
         if (name === "") {
-          alert("Please enter your name.");
-          return;
+
+            alert("Please enter your name.");
+
+            return;
         }
+
 
         if (password !== confirmPassword) {
-          alert("Passwords do not match.");
-          return;
+
+            alert("Passwords do not match.");
+
+            return;
         }
 
-       const user = {
-    name: name,
-    email: email,
-    password: password
-};
 
-console.log(user);
+        const user = {
 
-        localStorage.setItem("user", JSON.stringify(user));
+            name: name,
+            email: email,
+            password: password
 
-        localStorage.setItem("currentUser", JSON.stringify(user));
+        };
 
-        
+
+        localStorage.setItem(
+            "user",
+            JSON.stringify(user)
+        );
+
+
+        // Show success modal
+
+        if (accountCreatedModal) {
+
+            accountCreatedModal.show();
+
+        }
 
 
         console.log("Name:", name);
         console.log("Email:", email);
-        console.log("Password:", password);
-        console.log("Confirm Password:", confirmPassword);
 
     });
+
+}
+
+
+// PROCEED TO LOGIN
+
+const proceedLoginBtn =
+    document.getElementById("proceedLoginBtn");
+
+if (proceedLoginBtn) {
+
+    proceedLoginBtn.addEventListener(
+        "click",
+        function () {
+
+            if (accountCreatedModal) {
+
+                accountCreatedModal.hide();
+
+            }
+
+            switchForm("login");
+
+        }
+    );
 
 }

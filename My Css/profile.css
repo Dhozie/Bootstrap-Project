@@ -265,39 +265,57 @@ body.dark-mode .nav-link {
     gap: .5rem;
 }
 
-/* Wishlist & Cart */
+.dynamic-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
 
-.nav-action {
+.dynamic-nav-action {
+    position: relative;
     width: 42px;
     height: 42px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
     color: var(--surface-color);
     text-decoration: none;
-
     font-size: 1.15rem;
-
     transition: .3s ease;
 }
 
-body.dark-mode .nav-action {
+body.dark-mode .dynamic-nav-action {
     color: var(--heading-color);
 }
 
-.navbar.scroll .nav-action {
+.navbar.scroll .dynamic-nav-action {
     color: var(--heading-color);
 }
 
-.nav-action:hover {
+.dynamic-nav-action:hover {
     background: var(--accent-color);
     color: var(--surface-color) !important;
-
     transform: translateY(-2px);
+}
+
+.dynamic-nav-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: var(--surface-color);
+    font-size: .68rem;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 0 0 2px rgba(16, 16, 16, 0.08);
 }
 
 /* Theme Toggle */
@@ -1003,7 +1021,6 @@ body.dark-mode .library-filter.active i {
     transition: all .35s ease;
 }
 
-
 /* Circle */
 
 .logout-icon {
@@ -1019,7 +1036,6 @@ body.dark-mode .library-filter.active i {
     flex-shrink: 0;
 }
 
-
 /* Text */
 
 .logout-text {
@@ -1031,7 +1047,6 @@ body.dark-mode .library-filter.active i {
     text-transform: uppercase;
 }
 
-
 /* Show */
 
 #logoutBtn.show {
@@ -1039,7 +1054,6 @@ body.dark-mode .library-filter.active i {
     visibility: visible;
     transform: translateY(0);
 }
-
 
 /* Hover */
 
@@ -1054,13 +1068,6 @@ body.dark-mode .library-filter.active i {
     color: var(--accent-color);
 }
 
-
-
-
-
-
-
-
 .menu-btn {
     display: none;
     background: none;
@@ -1073,6 +1080,7 @@ body.dark-mode .library-filter.active i {
 body.dark-mode .menu-btn {
     color: var(--primary-color);
 }
+
 
 /* End Of Footer */
 
@@ -1088,10 +1096,6 @@ body.dark-mode .menu-btn {
         transition: none !important;
     }
 
-    html,
-    body {
-        overflow-x: hidden;
-    }
 
     .hero,
     .orbit-container {
@@ -1196,28 +1200,11 @@ body.dark-mode .menu-btn {
     transform: translateY(-2px);
 }
 
-
-
 /* Rotate hamburger */
 
 .menu-btn.active i {
     transform: rotate(90deg);
 }
-
-/* Wishlist & Cart */
-
-.nav-action {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    border-radius: 50%;
-    font-size: 1rem;
-}
-
 
 /* Keep them aligned */
 
@@ -1322,19 +1309,37 @@ body.dark-mode .nav-link {
     color: var(--text-color);
 }
 
+ #logoutBtn {
+        left: 15px;
+        bottom: 15px;
+        height: 42px;
+        padding: 0 1rem 0 0;
+        border-radius: 40px;
+        z-index: 9999;
+    }
 
-.login-btn {
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    padding: .1rem .3rem;
-    font-size: 1.6rem;
-}
+    #logoutBtn.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .logout-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .logout-text {
+        padding-left: .6rem;
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
 
     .profile-hero {
         min-height: 850px;
         padding: 5rem 1rem;
     }
+
 
     .profile-info h1 {
         font-size: 2.5rem;

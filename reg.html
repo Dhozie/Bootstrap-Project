@@ -379,6 +379,66 @@
 
     </main>
 
+    <!-- Account Created Modal -->
+
+    <div class="modal fade" id="accountCreatedModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-body text-center">
+
+                    <div class="success-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <h3>Account Created!</h3>
+
+                    <p>
+                        Your account has been created successfully.
+                        You can now proceed to login.
+                    </p>
+
+                    <button type="button" class="btn" id="proceedLoginBtn">
+                        Proceed to Login
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Login Success Modal -->
+    <div class="modal fade" id="loginSuccessModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-body text-center">
+
+                    <div class="success-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                   <h3>Welcome!</h3>
+
+<p>
+    We're glad to have you!,
+    <strong id="welcomeUserName"></strong>.
+    Ready to continue your reading journey?
+</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
     <script src="js/bootstrap.bundle.js"></script>
 
     <script src="dist/aos.js"></script>

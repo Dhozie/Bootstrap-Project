@@ -621,6 +621,103 @@ body.dark-mode .back-home-btn {
     text-decoration: underline;
 }
 
+/* MODALS */
+
+.modal-content {
+    background: linear-gradient(120deg, var(--card-color), var(--accent-color));
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.modal-body {
+    padding: 40px 35px;
+}
+
+/* SUCCESS ICON */
+
+.success-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-color);
+    color: var(--surface-color);
+    border-radius: 50%;
+    font-size: 3rem;
+}
+
+
+/* MODAL HEADING */
+
+.modal-body h3 {
+    margin-bottom: 2px;
+    color: var(--heading-color);
+    font-family: "Thunky";
+    font-size: 4rem;
+    font-weight: 100;
+    letter-spacing: 4px;
+    line-height: 0.8;
+}
+
+/* MODAL TEXT */
+
+.modal-body p {
+    margin: 0 0 25px;
+    color: var(--text-color);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+/* PROCEED BUTTON */
+
+#proceedLoginBtn {
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: var(--surface-color);
+    border: none;
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: 100;
+    letter-spacing: 3px;
+    transition: 0.3s ease;
+}
+
+#proceedLoginBtn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+
+/* LOGIN SUCCESS MODAL */
+
+#loginSuccessModal .modal-content {
+    border-top: 4px solid var(--accent-color);
+}
+
+#loginSuccessModal .success-icon {
+    background: var(--accent-color);
+}
+
+#welcomeUserName {
+    display: block;
+    margin-top: 5px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+
+/* MODAL BACKDROP */
+
+.modal-backdrop.show {
+    opacity: 0.65;
+}
+
 /* Responsive styles */
 
 @media (max-width: 767px) {
@@ -741,6 +838,49 @@ body.dark-mode .back-home-btn {
     }
 }
 
+    .modal-dialog {
+        margin: 15px;
+    }
+
+    .modal-content {
+        border-radius: 16px;
+    }
+
+    .modal-body {
+        padding: 30px 20px;
+    }
+
+    .success-icon {
+        width: 65px;
+        height: 65px;
+        margin-bottom: 15px;
+        font-size: 2rem;
+    }
+
+    .modal-body h3 {
+        margin-bottom: 2px;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+        line-height: 0.85;
+    }
+
+    .modal-body p {
+        margin: 0 0 20px;
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+
+    #proceedLoginBtn {
+        padding: 10px 20px;
+        font-size: 1.5rem;
+        letter-spacing: 1.5px;
+        border-radius: 8px;
+    }
+
+    #welcomeUserName {
+        margin-top: 3px;
+    }
+
 @media (min-width: 768px) and (max-width: 1024px) {
     .auth-nav {
         padding: 0 1.5rem;
@@ -798,5 +938,39 @@ body.dark-mode .back-home-btn {
 
     .auth-btn {
         padding: 14px 20px;
+    }
+
+     .modal-content {
+        border-radius: 18px;
+    }
+
+    .modal-body {
+        padding: 35px 30px;
+    }
+
+    .success-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 18px;
+        font-size: 2.5rem;
+    }
+
+    .modal-body h3 {
+        margin-bottom: 2px;
+        font-size: 3.2rem;
+        letter-spacing: 3px;
+        line-height: 0.8;
+    }
+
+    .modal-body p {
+        margin: 0 0 22px;
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+
+    #proceedLoginBtn {
+        padding: 11px 22px;
+        font-size: 1.9rem;
+        letter-spacing: 2px;
     }
 }

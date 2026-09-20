@@ -120,6 +120,133 @@ if (themeToggle) {
 
 // END THEME TOGGLE
 
+// DYNAMIC NAVBAR CART & WISHLIST
+
+function readStoredArray(key) {
+
+    try {
+
+        const rawValue = localStorage.getItem(key);
+
+        if (!rawValue) {
+            return [];
+        }
+
+        const parsed = JSON.parse(rawValue);
+
+        return Array.isArray(parsed) ? parsed : [];
+
+    } catch (error) {
+        return [];
+    }
+
+}
+
+function getCartQuantity(cartItems) {
+
+    return cartItems.reduce((total, item) => {
+
+        const quantity = Number(item?.quantity) || 0;
+
+        return total + quantity;
+
+    }, 0);
+
+}
+
+function buildDynamicNavAction({ href, iconClass, badgeText, ariaLabel, className }) {
+
+    const link = document.createElement("a");
+
+    link.href = href;
+    link.className = `dynamic-nav-action ${className}`;
+    link.setAttribute("aria-label", ariaLabel);
+
+    const icon = document.createElement("i");
+    icon.className = iconClass;
+
+    const badge = document.createElement("span");
+    badge.className = "dynamic-nav-badge";
+    badge.textContent = badgeText;
+
+    link.appendChild(icon);
+    link.appendChild(badge);
+
+    return link;
+
+}
+
+function renderDynamicNavbarActions() {
+
+    const navActions = document.querySelector(".navbar-actions");
+
+    if (!navActions) return;
+
+    const existingGroup = navActions.querySelector(".dynamic-nav-actions");
+
+    if (existingGroup) {
+        existingGroup.remove();
+    }
+
+    const cart = readStoredArray("cart");
+    const wishlist = readStoredArray("wishlist");
+
+    const cartQuantity = getCartQuantity(cart);
+    const wishlistCount = wishlist.length;
+
+    const actionsGroup = document.createElement("div");
+    actionsGroup.className = "dynamic-nav-actions";
+
+    if (cartQuantity > 0) {
+
+        actionsGroup.appendChild(
+            buildDynamicNavAction({
+                href: "cart.html",
+                iconClass: "fa-solid fa-cart-shopping",
+                badgeText: cartQuantity,
+                ariaLabel: "Cart",
+                className: "cart-dynamic-nav-action"
+            })
+        );
+
+    }
+
+    if (wishlistCount > 0) {
+
+        actionsGroup.appendChild(
+            buildDynamicNavAction({
+                href: "wishlist.html",
+                iconClass: "fa-regular fa-heart",
+                badgeText: wishlistCount,
+                ariaLabel: "Wishlist",
+                className: "wishlist-dynamic-nav-action"
+            })
+        );
+
+    }
+
+    if (actionsGroup.children.length > 0) {
+        navActions.insertBefore(actionsGroup, navActions.firstChild);
+    }
+
+}
+
+function initDynamicNavbarActions() {
+    renderDynamicNavbarActions();
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initDynamicNavbarActions);
+} else {
+    initDynamicNavbarActions();
+}
+
+window.addEventListener("storage", () => {
+    renderDynamicNavbarActions();
+});
+
+// END DYNAMIC NAVBAR CART & WISHLIST
+
 // COUNTER 
 
 const counters =
@@ -674,21 +801,21 @@ function logoutUser() {
 const logoutBtn = document.getElementById("logoutBtn");
 
 if (logoutBtn) {
+
     logoutBtn.addEventListener("click", logoutUser);
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 100) {
+
+            logoutBtn.classList.add("show");
+
+        } else {
+
+            logoutBtn.classList.remove("show");
+
+        }
+
+    });
+
 }
-
-window.addEventListener("scroll", () => {
-
-    if (!logoutBtn) return;
-
-    if (window.scrollY > 300) {
-
-        logoutBtn.classList.add("show");
-
-    } else {
-
-        logoutBtn.classList.remove("show");
-
-    }
-
-});
