@@ -1,3 +1,5 @@
+/* Start of Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -153,6 +155,10 @@ body {
     pointer-events: none;
 }
 
+
+/* End of Global Styles */
+
+/* Start of Nav Bar */
 
 /* Navigation */
 
@@ -352,6 +358,10 @@ a {
     text-decoration: none;
 }
 
+/* End of Nav Bar */
+
+/* Start of Book Page */
+
 /* Book Page */
 .book-main {
     background: var(--bg-color);
@@ -359,6 +369,8 @@ a {
     overflow: hidden;
 }
 
+
+/* Start of Hero Section */
 
 /* Hero */
 .book-hero {
@@ -486,6 +498,10 @@ body.dark-mode .book-hero {
 .book-cover img:hover {
     transform: translateY(-10px);
 }
+
+/* End of Hero Section */
+
+/* Start of Rating Section */
 
 /* Rating Section */
 
@@ -620,6 +636,10 @@ body.dark-mode .book-hero {
 }
 
 
+
+/* End of Rating Section */
+
+/* Start of Book Information Section */
 
 /* General Section */
 
@@ -862,6 +882,10 @@ body.dark-mode .summary-card {
     background: var(--surface-color);
     border-color: var(--border-color);
 }
+
+/* End of Book Information Section */
+
+/* Start of Recommendations Section */
 
 /* Reasons Why You will love it */
 
@@ -1181,6 +1205,12 @@ body.dark-mode .related-book-card {
     background: var(--primary-color);
     transform: translateY(-4px);
 }
+
+/* End of Recommendations Section */
+
+/* End of Book Page */
+
+/* Start of Media Queries */
 
 /* Media Query */
 

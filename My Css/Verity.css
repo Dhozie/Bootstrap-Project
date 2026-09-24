@@ -1,3 +1,5 @@
+/* Start of Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -234,6 +236,10 @@ body {
     pointer-events: none;
 }
 
+/* End of Global Styles */
+
+/* Start of Nav Bar */
+
 /* Navigation */
 
 .auth-nav {
@@ -431,7 +437,9 @@ a {
 }
 
 
-/* End Of Nav */
+/* End of Nav Bar */
+
+/* Start of Hero Section */
 
 /* Hero Section */
 
@@ -547,6 +555,10 @@ body.dark-mode .book-hero{
 .book-cover img:hover{
     transform:translateY(-10px);
 }
+
+/* End of Hero Section */
+
+/* Start of Summary Section */
 
 /* Summary */
 
@@ -1210,6 +1222,10 @@ body.dark-mode .carousel-control-next:hover {
     border-color: var(--accent-color);
 }
 
+/* End of Summary Section */
+
+/* Start of Footer */
+
 /* Footer */
 
 .footer {
@@ -1392,16 +1408,30 @@ body.dark-mode .carousel-control-next:hover {
 }
 
 
-/* End Of Footer */
+/* End of Footer */
+
+/* Start of Media Queries */
 
 /* Media Queries */
 
 /* Mobile */
 
+.book-price {
+    margin: 1rem 0 20rem;
+    color: var(--heading-color);
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
 @media (max-width:767px){    
      [data-aos="fade-left"],
     [data-aos="fade-right"]{
         transform: none !important;
+    }
+
+    .book-price{
+        margin: 1rem 0 14rem;
     }
 
     html,

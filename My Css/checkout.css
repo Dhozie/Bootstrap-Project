@@ -1,3 +1,5 @@
+/* Start of Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -92,6 +94,10 @@ body{
     transform: translateY(-5px);
 }
 
+
+/* End of Global Styles */
+
+/* Start of Hero Section */
 
 /* Checkout Hero */
 
@@ -208,6 +214,10 @@ body{
     line-height: 1.7;
     color: var(--surface-color);
 }
+
+/* End of Hero Section */
+
+/* Start of Checkout Section */
 
 /* Checkout Section */
 
@@ -667,6 +677,10 @@ body{
     transform: translateY(-2px);
 }
 
+
+/* End of Checkout Section */
+
+/* Start of Media Queries */
 
 /* Media Query  */
 

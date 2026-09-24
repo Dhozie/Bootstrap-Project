@@ -1,3 +1,5 @@
+/* Start of Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -92,6 +94,10 @@ body{
     transform: translateY(-5px);
 }
 
+
+/* End of Global Styles */
+
+/* Start of Nav Bar */
 
 /* Navbar */
 
@@ -383,7 +389,9 @@ body.dark-mode .theme-toggle .label::before {
     background: linear-gradient(135deg, var(--surface-color), var(--secondary-color));
 }
 
-/* End Of Nav */
+/* End of Nav Bar */
+
+/* Start of Hero Section */
 
 /* Cart Hero */
 
@@ -449,6 +457,10 @@ body.dark-mode .cart-hero-content h1{
 body.dark-mode .cart-hero-content p{
     color: var(--heading-color);
 }
+
+/* End of Hero Section */
+
+/* Start of Cart Section */
 
 /* Cart Section */
 
@@ -807,7 +819,15 @@ body.dark-mode .menu-btn {
     color: var(--primary-color);
 }
 
-/* End Of Footer */
+/* End of Cart Section */
+
+/* Start of Footer */
+
+/* End of Footer */
+
+/* End of Footer */
+
+/* Start of Media Queries */
 
 /* Media Query */
 

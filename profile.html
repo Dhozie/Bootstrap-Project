@@ -114,7 +114,7 @@
                     <div class="book-stack">
 
                         <!-- BOOK 1 -->
-                        <a href="book.html?book=children-d" class="stack-book stack-book-1">
+                        <a href="Children of blood and bone.html" class="stack-book stack-book-1">
 
                             <img src="My Images/children d.png" alt="Children D">
 
@@ -126,7 +126,7 @@
 
 
                         <!-- BOOK 2 -->
-                        <a href="book.html?book=Dracula" class="stack-book stack-book-2">
+                        <a href="dracula.html" class="stack-book stack-book-2">
 
                             <img src="My Images/Dracula.png" alt="Dracula">
 
@@ -138,7 +138,7 @@
 
 
                         <!-- BOOK 3 -->
-                        <a href="book.html?book=Curse-Breaker" class="stack-book stack-book-3">
+                        <a href="curse-breaker.html" class="stack-book stack-book-3">
 
                             <img src="My Images/Curse Breaker.jpeg" alt="Curse Breaker">
 
@@ -150,7 +150,7 @@
 
 
                         <!-- BOOK 4 -->
-                        <a href="book.html?book=The-Name-of-the-Wind" class="stack-book stack-book-4">
+                        <a href="book.html?book=the-name-of-the-wind" class="stack-book stack-book-4">
 
                             <img src="My Images/the name of the wind.png" alt="The Name of the Wind">
 
@@ -162,7 +162,7 @@
 
 
                         <!-- BOOK 5 -->
-                        <a href="book.html?book=The-100-Startup" class="stack-book stack-book-5">
+                        <a href="book.html?book=the-100-startup" class="stack-book stack-book-5">
 
                             <img src="My Images/The 100.png" alt="The $100 Startup">
 
@@ -174,7 +174,7 @@
 
 
                         <!-- BOOK 6 -->
-                        <a href="book.html?book=Verity" class="stack-book stack-book-6">
+                        <a href="Verity.html" class="stack-book stack-book-6">
 
                             <img src="My Images/Verity-removebg-preview.png" alt="Verity">
 
@@ -230,24 +230,23 @@
             </div>
 
 
-            <!-- Wishlist -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <a href="#" class="dashboard-card">
+         <!-- Wishlist -->
+<div class="col-12 col-sm-6 col-lg-3">
+    <a href="wishlist.html" class="dashboard-card">
 
-                    <div class="dashboard-icon">
-                        ❤️
-                    </div>
+        <div class="dashboard-icon">
+            ❤️
+        </div>
 
-                    <div class="dashboard-content">
-                        <h3>Wishlist</h3>
-                        <span>0 Books</span>
-                    </div>
+        <div class="dashboard-content">
+            <h3>Wishlist</h3>
+            <span class="wishlist-count">0 Books</span>
+        </div>
 
-                    <i class="fa-solid fa-arrow-right dashboard-arrow"></i>
+        <i class="fa-solid fa-arrow-right dashboard-arrow"></i>
 
-                </a>
-            </div>
-
+    </a>
+</div>
 
             <!-- Reading List -->
             <div class="col-12 col-sm-6 col-lg-3">
@@ -332,13 +331,102 @@
                 <span>Completed</span>
             </button>
 
-            <button class="library-filter" data-filter="saved">
-                <i class="fa-solid fa-bookmark"></i>
-                <span>Saved</span>
-            </button>
+<button class="library-filter" data-filter="saved">
+    <i class="fa-solid fa-bookmark"></i>
+    <span>Saved</span>
+    <span class="saved-count">0</span>
+</button>
+        </div>
+
+      <div class="library-content">
+
+    <!-- All Books -->
+    <div class="library-tab active" id="all">
+
+        <h3>All Books</h3>
+
+        <div class="library-preview">
+
+            <div class="library-book">
+                <img src="My Images/Dune.jfif" alt="Dune">
+                <h4>Dune</h4>
+            </div>
+
+            <div class="library-book">
+                <img src="My Images/Dracula.png" alt="Dracula">
+                <h4>Dracula</h4>
+            </div>
+
+            <div class="library-book">
+                <img src="My Images/Verity-removebg-preview.png" alt="Verity">
+                <h4>Verity</h4>
+            </div>
 
         </div>
 
+      <div class="library-view">
+    <a href="library.html" class="library-view-btn">
+        View Library
+    </a>
+</div>
+
+    </div>
+
+
+    <!-- Currently Reading -->
+    <div class="library-tab" id="reading">
+
+        <h3>Currently Reading</h3>
+
+        <p>
+            Your reading journey starts here. Browse our collection
+            and choose a book to begin reading.
+        </p>
+
+      <div class="library-view">
+    <a href="library.html" class="library-view-btn">
+        View Library
+    </a>
+</div>
+
+    </div>
+
+
+    <!-- Completed -->
+    <div class="library-tab" id="completed">
+
+        <h3>Completed</h3>
+
+        <p>
+            Books you finish will appear here. Keep exploring
+            and discover your next great read.
+        </p>
+
+<div class="library-view">
+    <a href="library.html" class="library-view-btn">
+        View Library
+    </a>
+</div>
+    </div>
+
+
+    <!-- Saved -->
+    <div class="library-tab" id="saved">
+
+        <h3>Saved Books</h3>
+
+        <div class="library-preview" id="savedBooks">
+            <!-- Wishlist books appear here -->
+        </div>
+
+      <div class="library-view">
+    <a href="wishlist.html" class="library-view-btn">
+        Go To Wishlist
+    </a>
+</div>
+    </div>
+
+</div>
         
 
 
@@ -380,6 +468,8 @@
     <script src="js/bootstrap.bundle.js"></script>
     <script src="dist/aos.js"></script>
     <script src="My Js/style.js"></script>
+    <script src="My Js/profile.js"></script>
+    <script src="My Js/guard.js"></script>
 
 </body>
 

@@ -1,3 +1,5 @@
+/* Start of Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -92,6 +94,10 @@ body{
     transform: translateY(-5px);
 }
 
+
+/* End of Global Styles */
+
+/* Start of Nav Bar */
 
 /* Navbar */
 
@@ -318,6 +324,207 @@ body.dark-mode .dynamic-nav-action {
     box-shadow: 0 0 0 2px rgba(16, 16, 16, 0.08);
 }
 
+.library-tab {
+    display: none;
+}
+
+.library-tab.active {
+    display: block;
+}
+
+/* Library Content */
+
+.library-content {
+    width: 100%;
+}
+
+.library-tab {
+    display: none;
+}
+
+.library-tab.active {
+    display: block;
+}
+
+.library-tab h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: Thunky;
+    font-size: 3rem;
+    font-weight: 100;
+    letter-spacing: 3px;
+    color: var(--heading-color);
+}
+
+.library-tab h3::before,
+.library-tab h3::after {
+    content: "";
+    flex: 1;
+    max-width: 300px;
+    height: 5px;
+    border-radius: 50%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent-color) 15%,
+        var(--primary-color) 85%,
+        transparent
+    );
+}
+
+.library-tab h3::before {
+    transform: rotate(-3deg);
+}
+
+.library-tab h3::after {
+    transform: rotate(3deg);
+}
+
+/* Book Grid */
+
+.library-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.library-book {
+    text-align: center;
+}
+
+.library-book img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 20px;
+    display: block;
+}
+
+.library-book h4 {
+    margin-top: .8rem;
+    font-family: Thunky;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    font-weight: 100;
+    color: var(--heading-color);
+}
+
+
+/* Library Button */
+
+.library-view{
+    text-align: center;
+}
+
+.library-view-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 60px 400px / 90px;
+    background: var(--accent-color);
+    color: var(--surface-color);
+    font-family: Thunky;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: .3s ease;
+    justify-content: center;
+}
+
+.library-view-btn:hover {
+    transform: translateY(-2px);
+    background: var(--heading-color);
+    color: var(--accent-color);
+    border-radius: 400px 60px / 90px;
+}
+
+body.dark-mode .library-view-btn:hover{
+    background: var(--card-color);
+}
+
+/* Reading & Completed */
+
+.library-tab > p {
+    max-width: 750px;
+    margin: 3rem;
+    font-family: "Times New Roman", serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.saved-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 20px;
+    height: 20px;
+
+    padding: 0 5px;
+
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: var(--surface-color);
+
+    font-size: .75rem;
+}
+
+
+/* Tablet */
+
+@media (max-width: 991px) {
+
+    .library-preview {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .library-book img {
+        height: 200px;
+    }
+
+}
+
+
+/* Phone */
+
+@media (max-width: 767px) {
+
+    .library-preview {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .library-book img {
+        height: 200px;
+    }
+
+}
+
+
+/* Small Phone */
+
+@media (max-width: 480px) {
+
+    .library-preview {
+        grid-template-columns: repeat(2, 1fr);
+        gap: .8rem;
+    }
+
+    .library-book img {
+        height: 160px;
+    }
+
+    .library-book h4 {
+        font-size: .95rem;
+    }
+
+}
+
 /* Theme Toggle */
 
 .theme-toggle {
@@ -383,7 +590,9 @@ body.dark-mode .theme-toggle .label::before {
     background: linear-gradient(135deg, var(--surface-color), var(--secondary-color));
 }
 
-/* End Of Nav */
+/* End of Nav Bar */
+
+/* Start of Profile Section */
 
 /* Hero Section */
 
@@ -1082,7 +1291,15 @@ body.dark-mode .menu-btn {
 }
 
 
-/* End Of Footer */
+/* End of Profile Section */
+
+/* Start of Footer */
+
+/* End of Footer */
+
+/* End of Footer */
+
+/* Start of Media Queries */
 
 /* Media Query */
 

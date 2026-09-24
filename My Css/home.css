@@ -1,3 +1,5 @@
+/* Start of Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -475,7 +477,15 @@ body.dark-mode .theme-toggle .label::before {
             var(--secondary-color));
 }
 
+/* End of Global Styles */
+
+/* Start of Nav Bar */
+
 /* End Of Nav */
+
+/* End of Nav Bar */
+
+/* Start of Hero Section */
 
 /* Hero Section */
 
@@ -1106,6 +1116,10 @@ body.dark-mode .hero-buttons .btn-outline:hover {
     }
 }
 
+/* End of Hero Section */
+
+/* Start of Best Sellers Section */
+
 /* End Of Hero  */
 
 /* Carousel */
@@ -1268,6 +1282,162 @@ body.dark-mode .book-card h5 {
     background:var(--primary-color);
     transform:translateY(-4px);
 }
+
+/* Start of Bestseller Book Actions */
+
+.best-sellers .book-card {
+    position: relative;
+}
+
+.bestseller-book-actions {
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+}
+
+.bestseller-action {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid var(--accent-color);
+    border-radius: 60px 400px / 90px;
+    background: var(--accent-color);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    pointer-events: auto;
+    transition: .3s ease;
+}
+.bestseller-action i{
+    font-size: 1.30rem;
+    color: var(--surface-color);
+}
+
+.bestseller-action:hover,
+.bestseller-action:focus-visible {
+    background: var(--accent-color);
+    color: var(--surface-color);
+}
+
+/* Login Required Modal */
+
+.login-required-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.login-required-modal.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.login-required-box {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    padding: 35px 30px;
+    text-align: center;
+      background: linear-gradient(120deg, var(--card-color), var(--accent-color));
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transform: translateY(20px) scale(0.95);
+    transition: 0.3s ease;
+}
+
+.login-required-modal.show .login-required-box {
+    transform: translateY(0) scale(1);
+}
+
+.login-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.login-modal-close:hover {
+    background: var(--accent-color);
+    color: var(--surface-color);
+}
+
+.login-modal-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: var(--surface-color);
+    font-size: 3rem;
+}
+
+.login-required-box h3 {
+    margin-bottom: 5px;
+    color: var(--heading-color);
+    font-size: 3rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.login-required-box p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: var(--heading-color);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.25rem;
+}
+
+.login-modal-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 25px;
+    background: var(--accent-color);
+    color: var(--heading-color);
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 1.25rem;
+    font-weight: 100;
+    letter-spacing: 3px;
+}
+
+.login-modal-btn:hover {
+    color: var(--surface-color);
+    transform: translateY(-2px);
+}
+/* End of Bestseller Book Actions */
 
 .best-sellers .carousel-control-prev,
 .best-sellers .carousel-control-next {
@@ -2152,6 +2322,10 @@ body.dark .input-group input:valid+label {
     color: var(--accent-color);
 }
 
+/* End of Best Sellers Section */
+
+/* Start of Footer */
+
 /* Footer */
 
 .footer {
@@ -2342,7 +2516,9 @@ body.dark .input-group input:valid+label {
     cursor: pointer;
 }
 
-/* End Of Footer */
+/* End of Footer */
+
+/* Start of Media Queries */
 
 /* Media Query */
 

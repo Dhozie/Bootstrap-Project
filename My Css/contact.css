@@ -1,3 +1,5 @@
+/* Start of Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -185,6 +187,10 @@ body {
     letter-spacing: 1px;
     color: var(--secondary-color);
 }
+
+/* End of Global Styles */
+
+/* Start of Nav Bar */
 
 /* Navbar */
 
@@ -476,7 +482,9 @@ body.dark-mode .theme-toggle .label::before {
     background: linear-gradient(135deg, var(--surface-color), var(--secondary-color));
 }
 
-/* End Of Nav */
+/* End of Nav Bar */
+
+/* Start of Contact Section */
 
 /* Hero */
 
@@ -1062,6 +1070,10 @@ body.dark-mode .contact-hero p {
 }
 
 
+/* End of Contact Section */
+
+/* Start of Footer */
+
 /* Footer */
 
 .footer {
@@ -1252,7 +1264,9 @@ body.dark-mode .contact-hero p {
     cursor: pointer;
 }
 
-/* End Of Footer */
+/* End of Footer */
+
+/* Start of Media Queries */
 
 /* Media Query */
 

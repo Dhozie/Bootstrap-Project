@@ -230,6 +230,15 @@
                                         View Summary
                                     </a>
 
+                                    <div class="bestseller-book-actions">
+                                        <button type="button" class="bestseller-action wishlist-action" aria-label="Add Curse Breaker to wishlist">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="bestseller-action cart-action" aria-label="Add Curse Breaker to cart">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </button>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -253,6 +262,15 @@
                                     <a href="tell-me-your-dream.html" class="btn-book">
                                         View Summary
                                     </a>
+
+                                    <div class="bestseller-book-actions">
+                                        <button type="button" class="bestseller-action wishlist-action" aria-label="Add Tell Me Your Dream to wishlist">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="bestseller-action cart-action" aria-label="Add Tell Me Your Dream to cart">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </button>
+                                    </div>
 
                                 </div>
 
@@ -278,6 +296,15 @@
                                         View Summary
                                     </a>
 
+                                    <div class="bestseller-book-actions">
+                                        <button type="button" class="bestseller-action wishlist-action" aria-label="Add Bared to You to wishlist">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="bestseller-action cart-action" aria-label="Add Bared to You to cart">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </button>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -301,6 +328,15 @@
                                     <a href="Burn.html" class="btn-book">
                                         View Summary
                                     </a>
+
+                                    <div class="bestseller-book-actions">
+                                        <button type="button" class="bestseller-action wishlist-action" aria-label="Add Burn to wishlist">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="bestseller-action cart-action" aria-label="Add Burn to cart">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </button>
+                                    </div>
 
                                 </div>
 
@@ -336,6 +372,15 @@
                                         View Summary
                                     </a>
 
+                                    <div class="bestseller-book-actions">
+                                        <button type="button" class="bestseller-action wishlist-action" aria-label="Add Children of Blood and Bone to wishlist">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="bestseller-action cart-action" aria-label="Add Children of Blood and Bone to cart">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </button>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -359,6 +404,15 @@
                                     <a href="dracula.html" class="btn-book">
                                         View Summary
                                     </a>
+
+                                    <div class="bestseller-book-actions">
+                                        <button type="button" class="bestseller-action wishlist-action" aria-label="Add Dracula to wishlist">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="bestseller-action cart-action" aria-label="Add Dracula to cart">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </button>
+                                    </div>
 
                                 </div>
 
@@ -384,6 +438,15 @@
                                         View Summary
                                     </a>
 
+                                    <div class="bestseller-book-actions">
+                                        <button type="button" class="bestseller-action wishlist-action" aria-label="Add The Exorcist to wishlist">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="bestseller-action cart-action" aria-label="Add The Exorcist to cart">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </button>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -407,6 +470,15 @@
                                     <a href="Verity.html" class="btn-book">
                                         View Summary
                                     </a>
+
+                                    <div class="bestseller-book-actions">
+                                        <button type="button" class="bestseller-action wishlist-action" aria-label="Add Verity to wishlist">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                        <button type="button" class="bestseller-action cart-action" aria-label="Add Verity to cart">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </button>
+                                    </div>
 
                                 </div>
 
@@ -1961,10 +2033,71 @@
         ⬆
     </button>
 
+    <!-- Login Required Modal -->
+    <div class="login-required-modal" id="loginRequiredModal">
 
+        <div class="login-required-box">
 
+            <button class="login-modal-close" id="loginModalClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="login-modal-icon">
+                <i class="fa-solid fa-user-lock"></i>
+            </div>
+
+            <h3>Login Required</h3>
+
+            <p>
+                Please login or sign in to add books to your wishlist or cart.
+            </p>
+
+            <a href="reg.html" class="login-modal-btn">
+                Login / Sign In
+            </a>
+
+        </div>
+
+    </div>
+
+    <script>
+
+    const loginRequiredModal =
+        document.getElementById("loginRequiredModal");
+
+    const loginModalClose =
+        document.getElementById("loginModalClose");
+
+    if (loginModalClose) {
+
+        loginModalClose.addEventListener("click", () => {
+
+            loginRequiredModal.classList.remove("show");
+
+        });
+
+    }
+
+    if (loginRequiredModal) {
+
+        loginRequiredModal.addEventListener("click", event => {
+
+            if (event.target === loginRequiredModal) {
+
+                loginRequiredModal.classList.remove("show");
+
+            }
+
+        });
+
+    }
+
+</script>
+
+    <!-- Scripts -->
     <script src="js/bootstrap.bundle.js"></script>
     <script src="dist/aos.js"></script>
+    <script src="My Js/guard.js"></script>
     <script src="My Js/style.js"></script>
 </body>
 

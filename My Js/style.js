@@ -245,6 +245,118 @@ window.addEventListener("storage", () => {
     renderDynamicNavbarActions();
 });
 
+// BESTSELLER ACTIONS
+
+function initBestsellerActions() {
+
+    const prices = {
+        "Curse Breaker": 35000,
+        "Tell Me Your Dream": 35000,
+        "Bared to You": 38000,
+        "Burn": 35000,
+        "Children of Blood and Bone": 45000,
+        "Dracula": 40000,
+        "The Exorcist": 42000,
+        "Verity": 40000
+    };
+
+    document.querySelectorAll(".best-sellers .book-card").forEach(bookCard => {
+
+        const titleElement = bookCard.querySelector("h3");
+        const authorElement = bookCard.querySelector("p");
+        const coverElement = bookCard.querySelector("img");
+
+        if (!titleElement || !authorElement || !coverElement) return;
+
+        const title = titleElement.textContent.trim();
+        const author = authorElement.textContent.trim();
+        const cover = coverElement.getAttribute("src");
+        const price = prices[title];
+
+        if (!price) return;
+
+        const wishlistButton = bookCard.querySelector(".wishlist-action");
+        const cartButton = bookCard.querySelector(".cart-action");
+
+        if (wishlistButton) {
+
+            let wishlist = readStoredArray("wishlist");
+
+            if (wishlist.some(item => item.bookName === title)) {
+                wishlistButton.classList.add("active");
+                wishlistButton.setAttribute("aria-pressed", "true");
+            }
+
+            wishlistButton.addEventListener("click", event => {
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (!requireLogin()) return;
+
+                wishlist = readStoredArray("wishlist");
+                
+                if (wishlist.some(item => item.bookName === title)) {
+                    wishlistButton.classList.add("active");
+                    wishlistButton.setAttribute("aria-pressed", "true");
+                    return;
+                }
+
+                wishlist.push({
+                    bookName: title,
+                    title: title,
+                    author: author,
+                    cover: cover,
+                    price: `₦${price.toLocaleString()}`
+                });
+
+                localStorage.setItem("wishlist", JSON.stringify(wishlist));
+                wishlistButton.classList.add("active");
+                wishlistButton.setAttribute("aria-pressed", "true");
+                renderDynamicNavbarActions();
+
+            });
+
+        }
+
+        if (cartButton) {
+
+            cartButton.addEventListener("click", event => {
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (!requireLogin()) return;
+
+    const cart = readStoredArray("cart");
+                const existingBook = cart.find(item => item.bookName === title);
+
+                if (existingBook) {
+                    existingBook.quantity = (Number(existingBook.quantity) || 0) + 1;
+                } else {
+                    cart.push({
+                        bookName: title,
+                        title: title,
+                        author: author,
+                        cover: cover,
+                        price: price,
+                        quantity: 1
+                    });
+                }
+
+                localStorage.setItem("cart", JSON.stringify(cart));
+                renderDynamicNavbarActions();
+
+            });
+
+        }
+
+    });
+
+}
+
+initBestsellerActions();
+
 // END DYNAMIC NAVBAR CART & WISHLIST
 
 // COUNTER 
@@ -795,6 +907,10 @@ if (profileEmail && currentUser) {
 
 function logoutUser() {
     localStorage.removeItem("currentUser");
+
+    localStorage.removeItem("cart");
+    localStorage.removeItem("wishlist");
+
     window.location.href = "reg.html";
 }
 

@@ -1,3 +1,5 @@
+/* Start of Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -53,6 +55,10 @@ body {
     font-family: Thunky, sans-serif;
     transition: background .35s ease, color .35s ease;
 }
+
+/* End of Global Styles */
+
+/* Start of Nav Bar */
 
 /* Navigation */
 
@@ -207,6 +213,10 @@ body.dark-mode .auth-nav .logo-icon {
     color: var(--surface-color);
 }
 
+
+/* End of Nav Bar */
+
+/* Start of Main Section */
 
 /* Main layout */
 
