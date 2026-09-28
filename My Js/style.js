@@ -935,3 +935,176 @@ if (logoutBtn) {
     });
 
 }
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .then(() => {
+        console.log("NovelNest service worker registered successfully.");
+      })
+      .catch((error) => {
+        console.error("Service worker registration failed:", error);
+      });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const installBtn = document.getElementById("installBtn");
+
+    if (!installBtn) return;
+
+    let deferredPrompt = null;
+
+    const installModal = document.getElementById("installModal");
+    const installTitle = document.getElementById("installTitle");
+    const installMessage = document.getElementById("installMessage");
+    const installIcon = document.getElementById("installIcon");
+    const installLoader = document.getElementById("installLoader");
+    const installClose = document.getElementById("installClose");
+
+
+    // Check if app is already installed
+
+    if (window.matchMedia("(display-mode: standalone)").matches) {
+        installBtn.style.display = "none";
+    }
+
+
+    // Show install prompt
+
+    window.addEventListener("beforeinstallprompt", (event) => {
+
+        event.preventDefault();
+
+        deferredPrompt = event;
+
+        installBtn.style.display = "inline-flex";
+
+    });
+
+
+    // Install button
+
+    installBtn.addEventListener("click", async () => {
+
+        if (!deferredPrompt) {
+
+            installTitle.textContent = "Installation Unavailable";
+
+            installMessage.textContent =
+                "NovelNest is already installed or installation is not currently available.";
+
+            installIcon.innerHTML =
+                '<i class="fa-solid fa-circle-info"></i>';
+
+            installLoader.style.display = "none";
+
+            installClose.classList.add("show");
+
+            installModal.classList.add("active");
+
+            return;
+        }
+
+
+        // Show installing modal
+
+        installTitle.textContent = "Installing NovelNest";
+
+        installMessage.textContent =
+            "Please wait while NovelNest is being installed.";
+
+        installIcon.innerHTML =
+            '<i class="fa-solid fa-download"></i>';
+
+        installLoader.style.display = "block";
+
+        installClose.classList.remove("show");
+
+        installModal.classList.add("active");
+
+
+        // Open browser installation prompt
+
+        deferredPrompt.prompt();
+
+
+        // Get user's choice
+
+        const { outcome } = await deferredPrompt.userChoice;
+
+
+        if (outcome === "accepted") {
+
+            installTitle.textContent = "Successfully Installed!";
+
+            installMessage.textContent =
+                "NovelNest has been successfully installed on your device. 🎉";
+
+            installIcon.innerHTML =
+                '<i class="fa-solid fa-check"></i>';
+
+            installLoader.style.display = "none";
+
+            installClose.classList.add("show");
+
+            installBtn.style.display = "none";
+
+        } else {
+
+            installTitle.textContent = "Installation Cancelled";
+
+            installMessage.textContent =
+                "The NovelNest installation was cancelled.";
+
+            installIcon.innerHTML =
+                '<i class="fa-solid fa-xmark"></i>';
+
+            installLoader.style.display = "none";
+
+            installClose.classList.add("show");
+
+        }
+
+
+        deferredPrompt = null;
+
+    });
+
+
+    // Installation completed
+
+    window.addEventListener("appinstalled", () => {
+
+        installBtn.style.display = "none";
+
+        deferredPrompt = null;
+
+        installTitle.textContent = "Successfully Installed!";
+
+        installMessage.textContent =
+            "NovelNest has been successfully installed on your device. 🎉";
+
+        installIcon.innerHTML =
+            '<i class="fa-solid fa-check"></i>';
+
+        installLoader.style.display = "none";
+
+        installClose.classList.add("show");
+
+        installModal.classList.add("active");
+
+    });
+
+
+    // Close modal
+
+    installClose.addEventListener("click", () => {
+
+        installModal.classList.remove("active");
+
+    });
+
+});

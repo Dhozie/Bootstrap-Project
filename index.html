@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhozie Bookstore</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#161311">
     <link rel="stylesheet" href="My Css/home.css">
     <link rel="stylesheet" href="dist/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
@@ -138,6 +140,9 @@
                 <div class="hero-buttons" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
                     <a href="library.html" class="btn">Browse Books</a>
                     <a href="contact.html" class="btn-outline">Learn More</a>
+                    <button id="installBtn" class="install-app-btn" type="button"><i class="fa-solid fa-download"></i>
+                        Install App
+                    </button>
                 </div>
 
             </div>
@@ -2059,6 +2064,32 @@
         </div>
 
     </div>
+
+    <!-- Install Modal -->
+
+<div class="install-modal" id="installModal">
+
+    <div class="install-modal-content">
+
+        <div class="install-icon" id="installIcon">
+            <i class="fa-solid fa-download"></i>
+        </div>
+
+        <h3 id="installTitle">Installing NovelNest</h3>
+
+        <p id="installMessage">
+            Please wait while NovelNest is being installed.
+        </p>
+
+        <div class="install-loader" id="installLoader"></div>
+
+        <button class="install-modal-close" id="installClose">
+            Close
+        </button>
+
+    </div>
+
+</div>
 
     <script>
 

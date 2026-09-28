@@ -1,0 +1,22 @@
+{
+  "name": "NovelNest",
+  "short_name": "NovelNest",
+  "description": "Discover, explore and shop for your favorite books.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#161311",
+  "theme_color": "#161311",
+  "orientation": "portrait-primary",
+ "icons": [
+  {
+    "src": "My Images/App.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },
+  {
+    "src": "My Images/App2.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }
+]
+}
